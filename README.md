@@ -15,6 +15,7 @@ The site is live at: **[https://docs.tetheria.ai](https://docs.tetheria.ai)**
 5. [Validating with Netlify Preview](#5-validating-with-netlify-preview)
 6. [Deployment](#6-deployment)
 7. [Summary Workflow](#summary-workflow)
+8. [Advanced Configuration](#8-advanced-configuration)
 
 ---
 
@@ -157,6 +158,21 @@ After PR is approved and merged to `main`:
 - Usually takes 1–2 minutes
 
 📸 **Deployed site example:**
+
+---
+
+## 8. Advanced Configuration
+
+For more advanced changes to the website configuration, styling, and functionality, see our **[Advanced Changes Guide](advanced_changes.md)**.
+
+This guide covers:
+- 🔧 **Project structure** and file organization
+- 📋 **Sidebar navigation** customization
+- 🎨 **Website branding** (title, logo, links)
+- 🖼️ **Image management** and optimization
+- 🎭 **Theme and styling** modifications
+- 🔌 **Plugin configuration** and extensions
+- ✅ **Best practices** for development workflow
 
 ---
 
