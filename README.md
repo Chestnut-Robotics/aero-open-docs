@@ -1,41 +1,181 @@
-# Website
+# Open Hand Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This repository contains the source code for the TetherIA Open Hand documentation website, built with [Docusaurus](https://docusaurus.io/) and deployed automatically with [Netlify](https://netlify.com/).
 
-## Installation
+The site is live at: **[https://docs.tetheria.ai](https://docs.tetheria.ai)**
 
-```bash
-yarn
-```
+---
 
-## Local Development
+## 📋 Table of Contents
 
-```bash
-yarn start
-```
+1. [Getting Started](#1-getting-started)
+2. [Preview the Website Locally](#2-preview-the-website-locally)
+3. [Making Changes to the Documentation](#3-making-changes-to-the-documentation)
+4. [Submitting Changes (Pull Requests)](#4-submitting-changes-pull-requests)
+5. [Validating with Netlify Preview](#5-validating-with-netlify-preview)
+6. [Deployment](#6-deployment)
+7. [Summary Workflow](#summary-workflow)
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+---
 
-## Build
+## 1. Getting Started
 
-```bash
-yarn build
-```
+### Prerequisites
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+You only need to install Node.js and npm once.
 
-## Deployment
+#### Install Node.js (v18 or later)
 
-Using SSH:
+- **Download from:** [nodejs.org](https://nodejs.org/)
+- **On Mac with Homebrew:** `brew install node`
 
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
+#### Verify installation:
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+node -v
+npm -v
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+✅ **You should see version numbers.**
+
+### Install Dependencies
+
+Clone the repo and install:
+
+```bash
+git clone https://github.com/TetherIA/open-hand-doc.git
+cd open-hand-doc
+npm install
+```
+
+📸 **Example terminal output:**
+
+---
+
+## 2. Preview the Website Locally
+
+Run the development server:
+
+```bash
+npm run start
+```
+
+Then open **[http://localhost:3000/](http://localhost:3000/)** in your browser.
+
+The page will update automatically when you edit files.
+
+📸 **Example local preview:**
+
+---
+
+## 3. Making Changes to the Documentation
+
+Most edits are just Markdown files inside the `docs/` folder.
+
+### 📂 Folder Structure
+
+```
+open-hand-doc/
+├── docs/            ← main documentation files
+│   ├── intro.md
+│   ├── usage.md
+│   └── my-new-page.md
+├── docusaurus.config.js
+├── package.json
+└── README.md
+```
+
+### Steps to Add or Edit Docs
+
+1. Open the `docs/` folder
+2. Duplicate an existing file or edit one
+3. Save changes
+
+### Markdown Basics (for Non-Coders)
+
+| Markdown | Result |
+|----------|--------|
+| `# Title` | Large title |
+| `## Subtitle` | Section heading |
+| `- item` | Bullet list |
+| `[text](https://example.com)` | Link |
+| `![caption](images/example.png)` | Image |
+
+📸 **Editing example:**
+
+---
+
+## 4. Submitting Changes (Pull Requests)
+
+### Create a New Branch
+
+```bash
+git checkout -b user/yourname/my-change
+```
+
+### Save & Commit
+
+```bash
+git add .
+git commit -m "Added new documentation page"
+git push origin user/yourname/my-change
+```
+
+### Open Pull Request
+
+1. Go to GitHub
+2. Click **"Compare & pull request"**
+
+📸 **GitHub PR button:**
+
+🔒 **Note:** One reviewer must approve before merge.
+
+---
+
+## 5. Validating with Netlify Preview
+
+When you create a PR, Netlify builds a preview site.
+
+📸 **Example (your screenshot):**
+
+✅ Shows **"Deploy Preview ready"**
+
+🔗 **Link to preview site** (e.g., `https://deploy-preview-2--openhandlite.netlify.app`)
+
+🔍 **Link to deploy logs**
+
+👉 **Click the preview link** to check your changes before merging.
+
+---
+
+## 6. Deployment
+
+After PR is approved and merged to `main`:
+
+- Netlify deploys automatically
+- Visit **[https://docs.tetheria.ai](https://docs.tetheria.ai)** to see updates
+- Usually takes 1–2 minutes
+
+📸 **Deployed site example:**
+
+---
+
+## Summary Workflow
+
+### Visual Workflow
+
+```
+Clone repo → npm install
+     ↓
+Preview site → npm run start
+     ↓
+Edit docs/*.md
+     ↓
+Push & open PR → get approval
+     ↓
+Check Netlify preview → confirm
+     ↓
+Merge → site updates live
+```
+
+---
