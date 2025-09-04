@@ -10,9 +10,9 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Aerie Hand',
+  title: 'Aerie Hand',  
   tagline: 'Empowering Physical AI with best dexterous hands',
-  favicon: 'img/logo.png',
+  favicon: 'img/Logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -79,12 +79,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/logo.png',
+      image: 'img/Logo.png',
       navbar: {
         title: 'TetherIA',
         logo: {
           alt: 'TetherIA Logo',
-          src: 'img/logo.png',
+          src: 'img/Logo.png',
         },
         items: [
           {
