@@ -80,6 +80,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/Logo.png',
+      algolia: {
+        appId: '2S8W7KORIR',
+        apiKey: '303872aa28d220970de83fdd162da887',
+        indexName: 'docs.tetheria.ai',
+        contextualSearch: true,
+      },
       navbar: {
         title: 'TetherIA',
         logo: {
