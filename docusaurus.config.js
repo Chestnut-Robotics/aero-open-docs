@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Aerie Hand',  
+  title: 'Aero Hand',  
   tagline: 'Empowering Physical AI with best dexterous hands',
   favicon: 'img/Logo.png',
 
@@ -28,7 +28,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'TetherIA', // Usually your GitHub org/user name.
-  projectName: 'aerie-hand', // Usually your repo name.
+  projectName: 'aero-hand', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
