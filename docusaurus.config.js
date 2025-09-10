@@ -125,36 +125,44 @@ const config = {
               },
             ],
           },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'X',
-          //       href: 'https://x.com/docusaurus',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'More',
-          //   items: [
-          //     {
-          //       label: 'Blog',
-          //       to: '/blog',
-          //     },
-          //     {
-          //       label: 'GitHub',
-          //       href: 'https://github.com/facebook/docusaurus',
-          //     },
-          //   ],
-          // },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/eRAzPMCm',
+              },
+              {
+                label: 'X',
+                href: 'https://x.com/TetherIA_ai',
+              },
+              {
+                label: 'Youtube',
+                href: 'https://www.youtube.com/@TetherIA_ai',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
+              {
+                label: 'Homepage',
+                href: 'https://tetheria.ai/',
+              },
+              {
+                label: 'Shop',
+                href: 'https://shop.tetheria.ai',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/TetherIA',
+              },
+            ],
+          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} TetherIA`,
       },
