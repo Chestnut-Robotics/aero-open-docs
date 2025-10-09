@@ -1,7 +1,29 @@
 This directory introduces a tendon-driven manipulation example that extends MuJoCo Playground with support for tendon-level control and observation in reinforcement learning tasks.
 
-The model is adapted from the [Tetheria Aero Hand Open](https://docs.tetheria.ai/), featuring a physically accurate tendon system that emulates cable-driven actuation. In this setup, both the policy inputs and observations are defined in the tendon space, providing a complete example of training and deploying tendon-driven controllers and under-actuated fingers in MuJoCo.
- 
+The **Tetheria Hand environment** is built upon the [**MuJoCo simulator**](https://mujoco.org/) and fully integrated into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)**.
+
+- **Hand model:** [MuJoCo Menagerie](https://github.com/TetherIA/mujoco_menagerie/tree/main/tetheria_aero_hand_open)
+- **Training Tools:** [MuJoCo Playground](https://github.com/TetherIA/mujoco_playground_pr)
+
+The hand model is adapted from the Tetheria Aero Hand Open, featuring a physically accurate **tendon-driven actuation system** that emulates cable-based mechanics. Both the policy inputs and observations are defined in **tendon space**, demonstrating a complete workflow for **training and deploying tendon-driven controllers** and **under-actuated fingers** within MuJoCo.
+
+### Quick Start
+
+If you’d like to **train your own policy**, follow these steps:
+
+1. Install MuJoCo Playground by following the [*installation guide*](https://github.com/TetherIA/mujoco_playground_pr/blob/main/README.md).  
+2. Use our Z-axis rotation environment for a quick demo, or create your own training environment for your own task by following [*this example*](https://github.com/TetherIA/mujoco_playground_pr/blob/main/mujoco_playground/_src/manipulation/aero_hand/rotate_z.py).  
+3. Start training with the following command:
+   ```bash
+   python learning/train_jax_ppo.py --env_name TetheriaCubeRotateZAxis
+   ```
+   You can replace ```TetheriaCubeRotateZAxis``` with the name of your custom environment. After training, a rollout video will be automatically generated as ```rollout0.mp4```.
+
+**Main features include:**
+- Physically consistent tendon routing and pulley mechanics.  
+- Support for tendon-space control and observation.  
+- Integration with JAX-based PPO training in MuJoCo Playground.  
+
 An overview of the hand is shown below:
 
 | ![Rock](imgs/rock.png) | ![Paper](imgs/paper.png) | ![Scissor](imgs/scissor.png) |
@@ -120,26 +142,7 @@ Sim2real deployment on Tetheria Aero Hand Open:
 
 *Note: The finger markers are **not** used.*
 
-## File Structure
-
-### Core Implementation
-- **`tetheria_hand_tendon_constants.py`** - Constants and configuration
-- **`rotate_z.py`** - Cube rotation task implementation
-
-### XML Models
-- **`xmls/right_hand.xml`** - Main hand model with tendon system
-- **`xmls/scene_mjx_cube.xml`** - Manipulation scene
-- **`xmls/reorientation_cube.xml`** - Cube reorientation task
-
-## Key Features
-
-- **Accurate tendon modeling**: Direct translation from real hand cable system
-- **Precise pulley placement**: Matches real hand routing exactly
-- **Validated parameters**: Tendon ranges match real hand within 0.1%
-
 ---
-
-*This implementation provides a high-fidelity tendon-driven hand model that closely matches the real robotic hand, enabling effective sim-to-real transfer for manipulation tasks.*
 
 ## Acknowledgements
 Our code is built upon
