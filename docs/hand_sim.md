@@ -1,4 +1,4 @@
-# Simulation and Reinforcement Learning Tools for TetherIA Aero Hand Open
+# Sim and RL
 
 The **TetherIA Aero Hand Open** features a physically accurate **tendon-driven actuation system** that emulates real cable mechanics, allowing control and observation directly in **tendon space**. This design provides a faithful bridge between simulation and real-world deployment.
 
