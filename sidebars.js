@@ -20,12 +20,12 @@ const sidebars = {
     'intro',                    // Introduction page
     'assembly',                 // Assembly Instructions
     'mechanical',               // Mechanical documentation
-    'pcb',                      // PCB documentation
-    'firmware',                 // Firmware documentation
+    // 'pcb',                      // PCB documentation
+    // 'firmware',                 // Firmware documentation
     'sdk',                      // SDK documentation
-    'ros2_comm',                // ROS2 communication
-    'teleop',                   // Teleoperation
-    'hand_sim',                 // Hand simulation
+    // 'ros2_comm',                // ROS2 communication
+    // 'teleop',                   // Teleoperation
+    // 'hand_sim',                 // Hand simulation
   ],
     'intro',                    // Introduction page
     'assembly',                 // Assembly Instructions
