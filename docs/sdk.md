@@ -47,7 +47,7 @@ You’ll see an interactive configuration interface similar to below:
 
 ![GUI Screen](/img/gui-screen.png)
 
-@Harsh-Panara Add more details on the GUI usage and first time setup here.\
+<!-- @Harsh-Panara Add more details on the GUI usage and first time setup here.\ -->
 
 ### 🪛 First-Time Setup
 GUI will help you with the following steps:
