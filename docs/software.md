@@ -125,6 +125,17 @@ By convention:
 - The minimum angle (0 °) corresponds to a fully extended joint, which translates to an open palm pose.
 - The maximum angle corresponds to a fully flexed joint, which translates to a closed fist pose.
 
+<div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "1rem" }}>
+  <div style={{ textAlign: "center" }}>
+    <img src="/img/open_palm.jpg" alt="Open Palm Pose" width="400"/>
+    <p><em>Open Palm Pose(Min Joint Angles)</em></p>
+  </div>
+  <div style={{ textAlign: "center" }}>
+    <img src="/img/closed_palm.jpg" alt="Closed Fist Pose" width="400"/>
+    <p><em>Closed Fist Pose(Max Joint Angles)</em></p>
+  </div>
+</div>
+
 These conventions are consistent across all joints for clarity and ease of control.
 
 Each joint's limits in degrees are as per below Table:
@@ -136,156 +147,199 @@ Each joint's limits in degrees are as per below Table:
 | thumb_mcp       | 0                   | 90                  |
 | thumb_ip        | 0                   | 90                  |
 | index_flex     | 0                   | 90                  |
-| index_pip      | 0                   | 110                 |
+| index_pip      | 0                   | 90                 |
 | index_dip      | 0                   | 90                  |
 | middle_flex    | 0                   | 90                  |
-| middle_pip     | 0                   | 110                 |
+| middle_pip     | 0                   | 90                 |
 | middle_dip     | 0                   | 90                  |
 | ring_flex      | 0                   | 90                  |
-| ring_pip       | 0                   | 110                 |
+| ring_pip       | 0                   | 90                 |
 | ring_dip       | 0                   | 90                  |
 | pinky_flex     | 0                   | 90                  |
-| pinky_pip      | 0                   | 110                 |
+| pinky_pip      | 0                   | 90                 |
 | pinky_dip      | 0                   | 90                  |
 
-The a
+To get the joint limits programmatically:
 
-```
+```print
 print(aero_hand.joint_lower_limits)
 print(aero_hand.joint_upper_limits)
 ```
 
-To control the hand, api expose `set_joint_positions` method which takes in a list of 16 joint angles in degrees and moves the hand to the desired position.
-NOTE: `set_joint_positions` method can also take in a list of 7 joint angles in degrees as input. More on that in later sections.
+### 🎮 Controlling the Hand
+
+To control the hand, api expose `set_joint_positions` method which takes in a list of 16 joint angles in degrees and moves the hand correspondingly.
+
+:::note
+`set_joint_positions` method can also take in a list of 7 joint angles(compact representation) in degrees as input. More on that in next section.
+:::
+
 
 ```
-# Example: Move the hand to a specific position
 target_positions = [30.0, 20.0, 45.0, 45.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0]
 aero_hand.set_joint_positions(target_positions)
 ```
 
+### 🔗 Joints to Actuations Mapping
+The hand uses 7 actuators to drive 16 joints through a tendon-driven mechanism, resulting in an under-actuated system where multiple joints are coupled.
+While we can only control 7 actuators in the hand, we found it useful to think in terms of 16 independent joint angles as many teleoprations systems are designed to work with joints angles. Also, actuators in the thumb are coupled in the sense that movement of one joint affects multiple actuators to maintain the other joint positions.
 
-### Joints to Actuations Mapping
+For example:
+- To move only the thumb_cmc_flex joint, we actuate the corresponding actuator. However, this also pulls the tendons that control the thumb_mcp and thumb_ip joints, causing them to move as well.  
+- Similar coupling exists for the thumb_cmc_abd joint as well, which affects all three actuators in the thumb.
 
-Our hand has a total of 7 actuators to control the aforementioned 16 joints. This is achieved through a tendon-driven mechanism where multiple joints are controlled by a single actuator. This results in an under-actuated system. While we can only control 7 actuators, we found it useful to think in terms of 16 independent joints as many teleoprations systems are designed to work joints angles. One more nuance in the system comes from the coupling of actuations to control a single joint in the thumb for example to only move the thumb cmc flex joint we need to actuate the thumb cmc flex actuator which moves the thumb cmc flex joint but as the thumb flex joint moves the tendon that controls the thumb mcp and thump ip joints also gets pulled resulting in movement of those joints as well. Similar coupling exist between thumb cmc abduction joint. We take care of this coupling via the joints to actuation mapping. Curious users can look into the `joints_to_actuations.py` file to understand the mapping in detail. Ideally, the you won't need to access this class directly as the `set_joint_positions` method internally uses it to convert the joint angles to actuator commands.
+We handle these coupling effects through the joints-to-actuations mapping. Curious users can explore the implementation in the [`joints_to_actuations.py`](https://github.com/TetherIA/aero-open-sdk/blob/9ed354aa429a97728cd94b616776ebd62bf5eff9/src/aero_open_sdk/joints_to_actuations.py) file for details.
 
-While using the 16 joint angles to control the hand is descriptive, it can become cumbersome for users to define hand poses, if the values are not comming from a teleoperation system. To make it easier for users to use the hand with joint state control, `set_joint_positions` method can also take in a compact representation of 7 joint angles in degrees as input. The compact representation consists of the following 7 entries:
+Typically, you won’t need to worry about these coupling effects, as the `set_joint_positions()` method automatically applies this mapping internally to convert joint angles into actuator commands.
+
+#### Compact Joint Representation
+While using the 16 joint angles to control the hand is descriptive, but as the hand only has 7 actuators it can become cumbersome and time consuming to provide all the 16 joint values to the `set_joint_positions` method all the time.
+This is especially true for users who want to define some hand poses manually for making the robot perform a seqeunce of actions rather then using a teleoperation system.
+To handle this, `set_joint_positions` method can also take in a compact representation of 7 joint angles in degrees as input.
+The compact representation consists of the following 7 entries, representing a grouped motion of joints that are controlled by a single actuator:
+
 | Index | Joint Controlled          | Description                     |
 |-------|---------------------------|---------------------------------|
-| 0     | thumb_cmc_abd         | Thumb CMC Abduction is controlled by a dedicated actuator. |
-| 1     | thumb_cmc_flex        | Thumb CMC Flexion is controlled by a dedicated actuator. |
-| 2     | thumb_mcp & thumb_ip             | Thumb MCP and IP joints are controlled by a single actuator. |
+| 0     | thumb_cmc_abd         | singls actuator for thumb_cmc_abd |
+| 1     | thumb_cmc_flex        | single actuator for thumb_cmc_flex |
+| 2     | thumb_mcp & thumb_ip             | both joints are controlled by one actuator |
 | 3     | index_mcp, index_pip & index_dip | All three joints of the index finger are controlled by a single actuator. |
 | 4     | middle_mcp, middle_pip & middle_dip | All three joints of the middle finger are controlled by a single actuator. |
 | 5     | ring_mcp, ring_pip & ring_dip       | All three joints of the ring finger are controlled by a single actuator. |
 | 6     | little_mcp, little_pip & little_dip   | All three joints of the little finger are controlled by a single actuator. |
 
 `set_joint_positions` method will convert this compact representation to the full 16 joint angles representation internally by copying the values to the joints that are controlled by the same actuator.
-For example if the user provides 7 joint angles as below:
-| 45.0 | 30.0 | 60.0 | 30.0 | 45.0 | 60.0 | 90.0 |
-code will convert it to 16 joint angles as below:
-| 
-[45.0, 30.0, 60.0, 60.0, 30.0, 30.0, 30.0, 45.0, 45.0, 45.0, 60.0, 60.0, 60.0, 90.0, 90.0, 90.0]
 
-Below table shows the mapping from 7 to 16 joint angles if the user provides 7 joint angles as below:
-Below table shows the mapping from 7 to 16 joint angles if the user provides 7 joint angles as below:
+Below table shows the internal mapping from 7 to 16 joint angles if the user provides 7 joint angles as below:
 
 | Input (7 joints) | 45 | 30 | 60 | 30 | 45 | 60 | 90 |
 |------------------|------|------|------|------|------|------|------|
 | Output (16 joints) | 45 | 30 | 60 60 | 30 30 30 | 45 45 45 | 60 60 60 | 90 90 90 |
 
-The representation intuitively makes sense as the user can think in terms of controlling the fingers as a whole rather than individual joints. The joint limits will still apply and have similar menanign to the 16 joint angles representation. The above example can be intutivey read as:
-move the thumb cmc abduction to 45 degrees
-move the thumb cmc flexion to 30 degrees
-move the thumb mcp and thumb ip to 60 degrees
-move all joints of index finger to 30 degrees
-move all joints of middle finger to 45 degrees
-move all joints of ring finger to 60 degrees
-move all joints of little finger to 90 degrees
+The above representation might be more intuitive to some users as the user can think in terms of controlling the fingers as a whole rather than individual joints. 
 
-Note that this dosen't garutee that thet hand will move to this exact position as the sysmte is under-actuated and the actual position will depend on the external forces acting on the hand. However, this representation makes it easier for the user to define hand poses.
+The above example can be intutivley read as:
+- move thumb cmc abduction to 45 degrees
+- move thumb cmc flexion to 30 degrees
+- move thumb mcp and thumb ip to 60 degrees
+- move all joints of index finger to 30 degrees
+- move all joints of middle finger to 45 degrees
+- move all joints of ring finger to 60 degrees
+- move all joints of little finger to 90 degrees
 
-### Actuation based control
-While we suggest that the user uses the `set_joint_positions` method to control the hand, for advanced users we also provide the `set_actuations` method to control the hand at the actuator level. 
-In software we use the below Actuations indexing and Naming conventions to refer to the actuators:
+Programmatically this can be done as below:
+
+```python
+compact_target_positions = [45.0, 30.0, 60.0, 30.0, 45.0, 60.0, 90.0]
+aero_hand.set_joint_positions(compact_target_positions)
+```
+
+:::note
+1. The joint limits for all the joints will still apply and have similar meaning to the complete 16 joint angle representation.
+2. Sending the above command dosen't guarantee that the hand will move each joint to the angles specified in the table above, as the hand is under-actuated and the actual position will depend on the external forces acting on the hand.
+:::
+
+
+### 🔧 Actuation-Level Control (Advanced)
+
+While we suggest that the user use `set_joint_positions` method to control the hand, for advanced users we also provide the `set_actuations` method to control the hand at the actuator level.  
+
+We use the below Actuations indexing and Naming conventions to refer to the actuators:
 - 0 - thumb_cmc_abd_act
 - 1 - thumb_cmc_flex_act
-- 2 - thumb_tendon
-- 3 - index_tendon
-- 4 - middle_tendon
-- 5 - ring_tendon
-- 6 - pinky_tendon
+- 2 - thumb_tendon_act
+- 3 - index_tendon_act
+- 4 - middle_tendon_act
+- 5 - ring_tendon_act
+- 6 - pinky_tendon_act
 
 This can also be accessed in the code by calling the `actuations_names` property of the AeroHand class.
 
-```
+```python
 print(aero_hand.actuations_names)
 ```
-Similar to joints, each actuator has a specific range of motion defined by its lower and upper limits. Actuation represents the degree of movement of the actuator, by convention we set the zero actuations to correspond to teh open palm pose(zero joint angles) and full actuation to correspond to closed fist pose(maximum joint angles). With this convention and our hands mechanical desing we get the actuation limits as below:
+
+Expected output:
+```python
+['thumb_cmc_abd_act', 'thumb_cmc_flex_act', 'thumb_tendon_act', 'index_tendon_act', 'middle_tendon_act', 'ring_tendon_act', 'pinky_tendon_act']
+```
+
+Similar to joints, each actuator has a specific range of motion defined by its lower and upper limits. Actuations represents the degree of movement of the actuator.
+
+By convention we set the zero actuations to correspond to the open palm pose(zero joint angles) and full actuation to correspond to closed fist pose(maximum joint angles). With this convention and our hand's mechanical design we get the actuation limits as below:
+
 | Actuator Name       | Min Actuation (degrees) | Max Actuation (degrees) |
-|---------------------|-------------------------|-------------------------|
+|---------------------|:-------------------------:|:-------------------------:|
 | thumb_cmc_abd_act   | 0                       | 100                     |
 | thumb_cmc_flex_act  | 0                       | 131.89                      |
-| thumb_tendon        | -27.78                | 274.92                       |
-| index_tendon        | 0                       | 288.16                       |
-| middle_tendon       | 0                       | 288.16                       |
-| ring_tendon         | 0                       | 288.16                       |
-| pinky_tendon        | 0                       | 288.16                       |
+| thumb_tendon_act       | -27.78                | 274.92                       |
+| index_tendon_act        | 0                       | 288.16                       |
+| middle_tendon_act       | 0                       | 288.16                       |
+| ring_tendon_act         | 0                       | 288.16                       |
+| pinky_tendon_act        | 0                       | 288.16                       |
 
-Notice that the thumb_tendon actuator has a negative lower limit. This is due to the fact that the thumb_tendon is not at it's lower extreme when the hand is in open palm pose(zero joint angles). This is a result of the mechanical design of the hand and the tendon routing. For the curious reader the lowest actuation of thumb tendon happends when the thumb cmc flex joint is at it's upper limit(55 degrees) and thumb cmc abduction joint is at it's lower limit(0 degrees). This could be calculated using the joints to actuation mapping. You can investigate the `joints_to_actuations.py` file to understand this in detail.
+:::note
+Notice that the thumb_tendon_act has a negative lower limit. This is due to the fact that the thumb_tendon is not at it's lower extreme when the hand is in open palm pose(zero joint angles). This is a result of the mechanical design of the hand and the tendon routing. For the curious readers, the lowest actuation of thumb tendon happens when the thumb cmc flex joint is at it's upper limit(55 degrees) and thumb cmc abduction joint is at it's lower limit(0 degrees). This could be calculated using the joints to actuation mapping. You can investigate the `joints_to_actuations.py` file to understand this in detail.
+:::
 
-Actuation limits could also be accessed in the code by calling the `actuations_lower_limits` and `actuations_upper_limits` properties of the AeroHand class.
+Actuation limits can be accessed programmatically as below:
 ```
 print(aero_hand.actuations_lower_limits)
 print(aero_hand.actuations_upper_limits)
 ```
 
-## Reading from the hand
+### 📡 Recieving Data from the Hand
 
-The API also provides methods to read the current state of the hand via various getter methods. Which are mostly self explanatory.
+The API also provides methods to read the current state of the actuators via various getter methods.
 
-### Get Actuations
+**Get Actuations**
+
 To read the current actuator positions in degrees call the `get_actuations` method.
 
-```
+```python
 current_actuations = aero_hand.get_actuations()
-print(current_actuations)
 ```
 
-This will return a list of 7 actuations in degrees, which corresponts to the 7 actuators in the hand. The indexing is same as described in the Actuations section above.
+This will return a list of 7 actuations in degrees.
 
-### Get actuator currents
-To read the current actuator currents in mA call the `get_actuator_currents` method.
+**Get Actuator Currents**
 
-```
+To read the current actuator currents in mA(milliAmpere) call the `get_actuator_currents` method.
+
+```python
 current_actuation_currents = aero_hand.get_actuator_currents()
-print(current_actuation_currents)
 ```
 
-This will return a list of 7 actuation currents in mA, which corresponts to the 7 actuators in the hand. The indexing is same as described in the Actuations section above.
+This will return a list of 7 actuation currents in mA.
 
-### Get actuator temperatures
+**Get Actuator Temperatures**
+
 To read the current actuator temperatures in degree Celsius call the `get_actuator_temperatures` method.
 
-```
+```python
 current_actuation_temperatures = aero_hand.get_actuator_temperatures()
-print(current_actuation_temperatures)
 ```
 
-This will return a list of 7 actuation temperatures in degree Celsius, which corresponts to the 7 actuators in the hand. The indexing is same as described in the Actuations section above.
+This will return a list of 7 actuation temperatures in degree Celsius.
 
-### Get actuator speed
+**Get Actuator Speeds**
+
 To read the current actuator speeds in rpm call the `get_actuator_speeds` method.
-```
+
+```python
 current_actuation_speeds = aero_hand.get_actuator_speeds()
-print(current_actuation_speeds)
 ``` 
 
-This will return a list of 7 actuation speeds in degrees per second, which corresponts to the 7 actuators in the hand. The indexing is same as described in the Actuations section above.
+This will return a list of 7 actuation speeds in rpm.
 
 
-## Once done you can close the connection to the hand by 
-calling the `close` method.
-```
-aero_hand.close()
-```
+### 💡 Examples
+
+To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-open-sdk/tree/9ed354aa429a97728cd94b616776ebd62bf5eff9/examples)
+
+
+<div align="center">
+
+Made with ❤️ by **TetherIA Robotics**
+
+</div>
