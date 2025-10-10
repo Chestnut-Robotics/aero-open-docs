@@ -7,9 +7,6 @@ The hand can be simulated across multiple physics platforms. Currently, it suppo
 - **Hand Model:** [MuJoCo Menagerie – TetherIA Aero Hand Open](https://github.com/TetherIA/mujoco_menagerie/tree/main/tetheria_aero_hand_open)  
 - **Training Tools:** [MuJoCo Playground](https://github.com/TetherIA/mujoco_playground_pr)
 
-The TetherIA Aero Hand Open features a physically accurate **tendon-driven actuation system** that emulates real cable-based mechanics.  
-Both policy inputs and observations are defined directly in **tendon space**, ensuring a faithful bridge between simulation and real-world control.
-
 ---
 
 ## 🚀 Quick Start
