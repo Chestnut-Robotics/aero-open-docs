@@ -18,6 +18,15 @@ const sidebars = {
   // Manual sidebar configuration to control page order
   tutorialSidebar: [
     'intro',                    // Introduction page
+    'assemble',                 // Assembly Instructions
+    'mechanical',               // Mechanical documentation
+    'pcb',                      // PCB documentation
+    'firmware',                 // Firmware documentation
+    'ros2_comm',                // ROS2 communication
+    'teleop',                   // Teleoperation
+    'hand_sim',                 // Hand simulation
+  ],
+    'intro',                    // Introduction page
     'assembly',                 // Assembly Instructions
     'mechanical',               // Mechanical documentation
     'pcb',                      // PCB documentation
