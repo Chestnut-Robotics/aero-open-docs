@@ -27,18 +27,6 @@ const sidebars = {
     // 'teleop',                   // Teleoperation
     // 'hand_sim',                 // Hand simulation
   ],
-    'intro',                    // Introduction page
-    'assembly',                 // Assembly Instructions
-    'mechanical',               // Mechanical documentation
-    'getting_started',          // Getting Started guide
-    'firmware',                 // Firmware documentation
-    'sdk',                      // SDK documentation
-    'hand_sim',                 // Hand simulation
-    'pcb',                      // PCB documentation
-    'ros2_comm',                // ROS2 communication
-    'teleop',                   // Teleoperation
-    
-  ],
 };
 
 export default sidebars;
