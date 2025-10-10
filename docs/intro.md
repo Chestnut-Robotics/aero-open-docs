@@ -12,10 +12,13 @@ This approach achieves high dexterity with fewer actuators, resulting in a light
 
 **Key characteristics:**
 - 15 Degrees of Freedom (7 active, 8 passive)
-- Compact BLDC actuator modules with integrated encoders
-- Differential tendon routing for natural finger coupling
-- Modular 3D-printable mechanical components (PLA/ABS)
-- 12 V DC power input and USB communication
+- 3 active DoFs for the thumb, enabling real dexterity
+- One-motor-per-finger tendon actuation
+- Passive 1:1 coupling between DIP and PIP joints
+- Adaptive coupling at MCP joint for compliant contact behavior
+- Compact servo actuator modules with integrated encoders
+- Modular 3D-printable mechanical components
+- 6 V DC power input and USB communication
 - Fully open-source CAD and PCB design
 
 All mechanical and electrical design files are available in the [`aero-open-hardware`](https://github.com/TetherIA/aero-open-hardware) repository.
@@ -26,7 +29,7 @@ All mechanical and electrical design files are available in the [`aero-open-hard
 
 The onboard controller runs custom firmware supporting:
 - Position, velocity, and torque control modes
-- High-frequency communication over USB or CAN
+- High-frequency communication over USB
 - Real-time command streaming via ROS 2 and Python SDK
 - Built-in calibration and diagnostics utilities
 
@@ -41,13 +44,13 @@ Developers can interface with the hand through:
 - **ROS 2 packages** exposing scripting, teleoperation, and logging
 - Example nodes for control, data collection, and policy playback
 
-All software APIs are maintained in [`aero-open-sdk`](https://github.com/TetherIA/aero-open-sdk).
+Software API is maintained in [`aero-open-sdk`](https://github.com/TetherIA/aero-open-sdk).
 
 ---
 
 ## Simulation and Learning
 
-Aero Hand Open is fully supported in **MuJoCo** and **Isaac Sim** (coming soon), with tendon-level actuation and observation.  
+Aero Hand Open is fully supported in **MuJoCo** with upcoming Issac Sim support, with tendon-level actuation and observation.  
 It integrates with popular RL and imitation learning frameworks, including **MuJoCo Playground** and **LeRobot** (coming soon), enabling a consistent sim-to-real workflow.
 
 Use simulation to train control policies, benchmark algorithms, and prototype manipulation tasks before deployment on real hardware.
