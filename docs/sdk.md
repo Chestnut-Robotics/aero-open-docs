@@ -161,7 +161,7 @@ Each joint's limits in degrees are as per below Table:
 
 To get the joint limits programmatically:
 
-```print
+```python
 print(aero_hand.joint_lower_limits)
 print(aero_hand.joint_upper_limits)
 ```
@@ -283,7 +283,7 @@ Notice that the thumb_tendon_act has a negative lower limit. This is due to the 
 :::
 
 Actuation limits can be accessed programmatically as below:
-```
+```python
 print(aero_hand.actuations_lower_limits)
 print(aero_hand.actuations_upper_limits)
 ```
