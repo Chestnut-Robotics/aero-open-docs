@@ -1,11 +1,6 @@
-<p align="center">
-  <img alt="Aero Hand Open by TetherIA" src="imgs/logo.png" width="30%">
-  <br/>
-</p>
+# Firmware
 
-# Aero Hand Open — Firmware Guide
-
-This guide covers architecture, build options, and a detailed communication protocol spec used by the **ESP32‑S3 (Seeed Studio XIAO ESP32S3)** to drive **Feetech HLS3606M servos**.
+This guide covers architecture, build options, and a detailed communication protocol specification used by the **ESP32‑S3 (Seeed Studio XIAO ESP32S3)** to drive **Feetech HLS3606M servos**.
 
 ---
 
@@ -77,7 +72,7 @@ You can switch hands either by editing `HandConfig.h` **or** using build flags.
 
 ---
 
-## 🔌 Communication Protocol (Authoritative)
+## 🔌 Communication Protocol
 
 The protocol is **always 16 bytes** per frame, both **to** and **from** the device. Payload words are **little‑endian**.
 
@@ -230,7 +225,7 @@ This project is licensed under **Apache License‑2.0**
 
 We welcome community contributions!
 
-If you would like to improve the Firmware or add new features:
+If you would like to improve the [Firmware](https://github.com/TetherIA/aero-open-firmware) or add new features:
 
 1. Fork and create a feature branch.
 2. Add or modify opcodes and handlers as described in Section 9.
@@ -248,7 +243,9 @@ If you would like to improve the Firmware or add new features:
 
 <div align="center">
   <br/>
-  <b>Happy building!</b> Try something new, break things safely, and share what you learn. If this helps, please ⭐ the repo and share it with others!
+    <b>Happy building!</b><br/>
+    Try something new, Break things safely, Share what you learn.<br/>
+    If this helps, please ⭐ the repo and share it with others!<br/>
   <br/><br/>
   Built with ❤️ by TetherIA.ai
 </div>
