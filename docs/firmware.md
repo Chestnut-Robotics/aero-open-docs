@@ -210,7 +210,7 @@ Extend your Python SDK/GUI (e.g., `aero_hand.py`) to emit and consume the new op
 ## 🧯 Troubleshooting
 
 * **Wrong hand geometry:** Verify build flag (`-DLEFT_HAND` vs `-DRIGHT_HAND`).
-* **Servos move opposite:** Check `servo_direction` or swap extend/grasp counts.We recommend not to change the servo_direction , extend_count can be changed by Trim Servo.
+* **Servos move opposite:** Check `servo_direction` or swap extend/grasp counts. We recommend not to change the servo_direction , extend_count can be changed by Trim Servo.
 * **Homing stalls:** Inspect current limits/timeouts; verify mechanics move freely.
 * **No serial activity:** Confirm COM port/baud and that frames are exactly 16 bytes with valid opcodes.
 
