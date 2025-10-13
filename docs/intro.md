@@ -73,7 +73,8 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 
 - [Build and assemble the hand →](./assembly.md)  
 - [Flash and verify firmware →](./firmware.md)  
-- [Connect via ROS 2 or Python SDK →](./sdk.md)  
+- [Connect via ROS 2 or Python SDK →](./sdk.md)
+- [Getting Started with GUI of SDK →](./getting_started.md)  
 - [Run simulation in MuJoCo →](./hand_sim.md)
 
 ---
