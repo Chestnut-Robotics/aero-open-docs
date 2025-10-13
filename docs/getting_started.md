@@ -14,26 +14,115 @@ aero-hand-gui
   <img alt="Aero Hand GUI" src="imgs/gui.png" width="98%"/>
 </p>
 
-### 🧩 First‑Time Setup: Servo IDs (One‑by‑One)
 
-1. **Power** the board with the servo rail 6V and connect USB.
+### 🧩 First‑Time Setup: Uploading Firmware
+
+To upload firmware to your Aero Hand device:
+
+1. **Refresh all ports** in the GUI to detect connected devices.
+2. If multiple ports are listed, identify the port for your ESP device:
+  - On **Windows**, it is usually a **COM** port (e.g., COM3, COM12).
+  - On **Linux**, look for `/dev/ttyACM0`, `/dev/ttyACM1`, etc.
+3. Select the correct port and press the **Upload Firmware** button.
+4. A dialog box will open—navigate to and select the appropriate firmware `.bin` file (`firmware_righthand.bin` or `firmware_lefthand.bin`).
+5. The tool will upload the `.bin` file to the device at offset address **0x10000**.
+6. On successful upload, you will see a confirmation message in the GUI.
+
+![uploading Firmware](imgs/uploadfirmware.png)
+
+#### Notes & Troubleshooting
+
+1. If you encounter errors, first check that you have selected the correct COM port.
+2. The tool uses **esptool version 5 or greater**. Older versions may not work, as they use `write_flash` instead of `write-flash`.
+3. After flashing, the tool will attempt to reconnect to the ESP automatically (up to 3 attempts). Usually, it connects on the first try. If not, refresh your ports and try again.
+4. The firmware is uploaded to offset **0x10000**. Do not use merged or partition `.bin` files, as these may cause errors. Only use the provided bin files from the `aero-open-firmware` repository.
+
+Next step is to set the servo IDs, see the next section below.
+
+### Setting Servo -IDs
+
+1. **Power** the board with the 6V and connect USB.
 2. **Connect exactly one servo** to the bus.
 3. In the GUI, choose the correct **COM Port**, press **Connect**.
 4. Click **Set ID** and assign the servo for the channel you’re wiring:
-
-   * `0 → thumb_abduction_actuator`
-   * `1 → thumb_flex_actuator`
-   * `2 → thumb_tendon_actuator`
-   * `3 → index_finger_actuator`
-   * `4 → middle_finger_actuator`
-   * `5 → ring_finger_actuator`
-   * `6 → pinky_finger_actuator`
+  * `0 → thumb_abduction_actuator`
+  * `1 → thumb_flex_actuator`
+  * `2 → thumb_tendon_actuator`
+  * `3 → index_finger_actuator`
+  * `4 → middle_finger_actuator`
+  * `5 → ring_finger_actuator`
+  * `6 → pinky_finger_actuator`
 5. If the id is successfully set, You will receive an ACK in the RX bar below.
 6. If you receive 65535 in oldid,new id and current as ACK , It indicates that the id is not successfully set.
-7. Further after setting up the ID , you can move the responsible slider to make sure whether the actuator is moving or not.
+7. After setting up the ID, you can move the responsible slider to make sure whether the actuator is moving or not.
 8. Disconnect that servo, plug the next one, and **repeat** until all seven are assigned.
 
-> The Set‑ID flow expects only **one** responding servo. If multiple are found, it will refuse to proceed to avoid accidental re‑ID.
+![Setting Servo - IDs](imgs/set-id.PNG)
+
+### Notes & Troubleshooting
+
+1. Make sure that the board has power and exactly one servo is connected before setting the ID.
+2. We recommend setting IDs for all servos in sequence (0–6). Any value apart from 0–6 will not be accepted.
+3. For current limit, we recommend keeping it at the maximum (1023) and pressing OK—do not change this value unless necessary.
+4. After setting the ID, you will receive the old ID, new ID, and current limit of the servo as confirmation.
+5. If you receive 65535 in old ID, new ID, and current limit, this indicates that two or more servos are present and the Set ID mode will not proceed.
+6. Once all IDs are Set, We recommend not to use this function once you are playing and training with the hand.
+
+### Trim Servo
+
+When using Trim Servo:
+First, you will be asked to enter the servo channel (0–6), which represents the sequence: thumb abduction, thumb flexion, thumb tendon, and the four fingers. Next, enter the degrees offset. We recommend making adjustments in steps of 10–20 degrees, then observe the effect using the sliders. If something unusual happens, you may need to perform the homing procedure again to reset the extend count to the baseline.
+
+#### Left Hand Actuator Table
+| Channel | Actuator Name          | Extend Count | Grasp Count | Motion (°) | Direction | 
+|---------|------------------------|--------------|-------------|------------|-----------|
+| 0       | Thumb Abduction        | 2048         | 3186        | 100        | +1        | 
+| 1       | Thumb Flexion          | 865          | 2048        | 104        | -1        | 
+| 2       | Thumb Tendon           | 2980         | 0           | 262        | +1        | 
+| 3       | Index Finger           | 817          | 4095        | 288        | -1        | 
+| 4       | Middle Finger          | 817          | 4095        | 288        | -1        | 
+| 5       | Ring Finger            | 817          | 4095        | 288        | -1        |
+| 6       | Pinky Finger           | 817          | 4095        | 288        | -1        |
+
+#### Right Hand Actuator Table
+
+| Channel | Actuator Name          | Extend Count | Grasp Count | Motion (°) | Direction | 
+|---------|------------------------|--------------|-------------|------------|-----------|
+| 0       | Thumb Abduction        | 2048         | 910         | 100        | -1        |
+| 1       | Thumb Flexion          | 3231         | 2048        | 104        | +1        |
+| 2       | Thumb Tendon           | 1115         | 4095        | 262        | -1        | 
+| 3       | Index Finger           | 3278         | 0           | 288        | +1        | 
+| 4       | Middle Finger          | 3278         | 0           | 288        | +1        |
+| 5       | Ring Finger            | 3278         | 0           | 288        | +1        |
+| 6       | Pinky Finger           | 3278         | 0           | 288        | +1        |
+
+*Motion (°) is calculated as (Grasp Count - Extend Count) / 11.375*
+
+##### Example: Trimming Right Hand Servo Channel 2 by +10 Degrees
+
+Suppose you set +10 degrees trim for the right hand, servo channel 2 (Thumb Tendon Actuator):
+- Original Extend Count: 1115
+- Grasp Count: 4095
+- Each degree corresponds to 11.375 counts.
+- So, +10 degrees will update Extend Count to:
+  
+  1115 + (10 × 11.375) = 1228 (rounded to 1228)
+
+- The new range of motion will be:
+  
+  4095 - 1228 = 2867 counts
+
+This means the servo will now move through 2867 counts instead of the original 2980 counts which represent 262 degrees of motion and now it will move 252 degrees of total motion only, which will reduce the full range of motion and make it more tight. If you do in the opposite direction , It will increase the motion of servo which will loose the wire and may cause issues. Since , You cannot mofidy the grasp count of the servo, We recommned to go through this table before doing any changes.
+
+![Trim Servo](imgs/trim-servo.png)
+
+#### Notes & Troubleshooting
+1. Do not enter values like 360 or -360 degrees, as this may completely change your control direction—please avoid this.
+2. If the servo becomes too tight, try loosening it by entering degrees in the opposite direction to your last adjustment.
+3. Use this function only when you want fine control over the servo's range of motion.
+4. Disconnect power immediately if any actuator moves to an abrupt position and draws stall current (typically 1.3–1.5A).
+
+IMAGGEEE
 
 ### 🎛️ Top Bar Controls
 
@@ -73,7 +162,7 @@ Each row controls a single actuator channel with a **normalized slider**:
 * **RX Log**: Text console of responses/telemetry. Useful for debugging, verifying opcodes, and viewing GET_* results.
 * **Clear Log**: Clears the RX Log display (does not affect device state).
 
-### 🧰 Tips & Troubleshooting
+### 🧰 Tips & Tricks
 
 * **Port not listed?** Click **Refresh**; check drivers, cables, and that no other app is holding the port.
 * **Set‑ID fails?** Ensure only one servo is connected and the servo rail is powered.
