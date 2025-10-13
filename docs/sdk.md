@@ -288,7 +288,7 @@ print(aero_hand.actuations_lower_limits)
 print(aero_hand.actuations_upper_limits)
 ```
 
-### 📡 Recieving Data from the Hand
+### 📡 Receiving Data from the Hand
 
 The API also provides methods to read the current state of the actuators via various getter methods.
 
