@@ -28,8 +28,8 @@ aero-hand-gui
    * `4 → middle_finger_actuator`
    * `5 → ring_finger_actuator`
    * `6 → pinky_finger_actuator`
-5. If the id is successfully set, You will recieve and ACK in the RX bar below.
-6. If you recieve 65535 in oldid,new id and current as ACK , It indicates that the id is not successfully set.
+5. If the id is successfully set, You will receive an ACK in the RX bar below.
+6. If you receive 65535 in oldid,new id and current as ACK , It indicates that the id is not successfully set.
 7. Further after setting up the ID , you can move the responsible slider to make sure whether the actuator is moving or not.
 8. Disconnect that servo, plug the next one, and **repeat** until all seven are assigned.
 
