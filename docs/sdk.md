@@ -194,7 +194,7 @@ Typically, you won’t need to worry about these coupling effects, as the `set_j
 
 #### Compact Joint Representation
 While using the 16 joint angles to control the hand is descriptive, but as the hand only has 7 actuators it can become cumbersome and time consuming to provide all the 16 joint values to the `set_joint_positions` method all the time.
-This is especially true for users who want to define some hand poses manually for making the robot perform a seqeunce of actions rather then using a teleoperation system.
+This is especially true for users who want to define some hand poses manually for making the robot perform a sequence of actions rather then using a teleoperation system.
 To handle this, `set_joint_positions` method can also take in a compact representation of 7 joint angles in degrees as input.
 The compact representation consists of the following 7 entries, representing a grouped motion of joints that are controlled by a single actuator:
 
