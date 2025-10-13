@@ -6,7 +6,7 @@ After [assembling your hand](/docs/mechanical.md) and setting up the actuators (
 
 ## ⚙️ Installation
 
-The SDK is currently tested for Python 3.10 and support linux and windows.
+The SDK is currently tested for Python 3.10 and supports Linux and Windows.
 
 ### 📦 Install via pip
 
