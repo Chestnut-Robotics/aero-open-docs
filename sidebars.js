@@ -18,6 +18,7 @@ const sidebars = {
   // Manual sidebar configuration to control page order
   tutorialSidebar: [
     'intro',                    // Introduction page
+    'getting_started',          // Getting Started guide
     'assembly',                 // Assembly Instructions
     'mechanical',               // Mechanical documentation
     'pcb',                      // PCB documentation
