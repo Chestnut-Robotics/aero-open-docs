@@ -218,7 +218,7 @@ Below table shows the internal mapping from 7 to 16 joint angles if the user pro
 
 The above representation might be more intuitive to some users as the user can think in terms of controlling the fingers as a whole rather than individual joints. 
 
-The above example can be intutivley read as:
+The above example can be intuitively read as:
 - move thumb cmc abduction to 45 degrees
 - move thumb cmc flexion to 30 degrees
 - move thumb mcp and thumb ip to 60 degrees
