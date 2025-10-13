@@ -200,7 +200,7 @@ The compact representation consists of the following 7 entries, representing a g
 
 | Index | Joint Controlled          | Description                     |
 |-------|---------------------------|---------------------------------|
-| 0     | thumb_cmc_abd         | singls actuator for thumb_cmc_abd |
+| 0     | thumb_cmc_abd         | single actuator for thumb_cmc_abd |
 | 1     | thumb_cmc_flex        | single actuator for thumb_cmc_flex |
 | 2     | thumb_mcp & thumb_ip             | both joints are controlled by one actuator |
 | 3     | index_mcp, index_pip & index_dip | All three joints of the index finger are controlled by a single actuator. |
