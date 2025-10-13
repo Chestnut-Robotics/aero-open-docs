@@ -63,7 +63,7 @@ Each row controls a single actuator channel with a **normalized slider**:
 
 * **0.000 → 1.000** maps linearly to the channel’s calibrated **extend ↔ grasp** range in 2 bytes and sent as 14 bytes payload using CTRL_POS Command.
 * While you drag, the GUI streams **CTRL_POS** frames at the selected **Rate (Hz)**.
-* Two small numeric readouts show the current command and (when polled) the latest normalized feedback.4
+* Two small numeric readouts show the current command and (when polled) the latest normalized feedback.
 
 **Channel map (top→bottom):** `thumb_abduction_actuator`, `thumb_flex_actuator`, `thumb_tendon_actuator`, `index_finger_actuator`, `middle_finger_actuator`, `ring_finger_actuator`, `pinky_finger_actuator`.
 
