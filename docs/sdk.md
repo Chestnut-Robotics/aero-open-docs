@@ -236,7 +236,7 @@ aero_hand.set_joint_positions(compact_target_positions)
 
 :::note
 1. The joint limits for all the joints will still apply and have similar meaning to the complete 16 joint angle representation.
-2. Sending the above command dosen't guarantee that the hand will move each joint to the angles specified in the table above, as the hand is under-actuated and the actual position will depend on the external forces acting on the hand.
+2. Sending the above command doesn't guarantee that the hand will move each joint to the angles specified in the table above, as the hand is under-actuated and the actual position will depend on the external forces acting on the hand.
 :::
 
 
