@@ -9,10 +9,9 @@ aero-hand-gui
 
 > If your system can’t find the command, ensure your Python environment’s scripts directory is on PATH and that the package was installed into the active environment.
 
-<p align="center">
-  <em>Screenshot of the GUI</em><br/>
-  <img alt="Aero Hand GUI" src="imgs/gui.png" width="98%"/>
-</p>
+<div align="center">
+  ![Screenshot of GUI](imgs/gui.png)
+</div>
 
 
 ### 🧩 First‑Time Setup: Uploading Firmware
@@ -122,7 +121,6 @@ This means the servo will now move through 2867 counts instead of the original 2
 3. Use this function only when you want fine control over the servo's range of motion.
 4. Disconnect power immediately if any actuator moves to an abrupt position and draws stall current (typically 1.3–1.5A).
 
-IMAGGEEE
 
 ### 🎛️ Top Bar Controls
 
