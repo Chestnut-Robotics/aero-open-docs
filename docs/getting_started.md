@@ -1,4 +1,33 @@
 # First - Time Setup
+## ⚙️ Installation
+
+The SDK is currently tested for Python 3.10 and above.
+
+### 📦 Install via pip
+
+```bash
+pip install aero-hand-sdk
+```
+
+### 🧩 Install from source (editable mode)
+
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/TetherIA/aero-open-sdk.git
+   ```
+
+2. Navigate to the cloned repository directory:
+   ```bash
+   cd aero-open-sdk
+   ```
+
+3. Install the package in editable mode:
+   ```bash
+   pip install -e .
+   ```
+
+---
+
 ## 🖥️ GUI — Aero Hand Open Control App
 
 Launch the GUI from a terminal after installation:

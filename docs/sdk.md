@@ -50,7 +50,8 @@ You’ll see an interactive configuration interface similar to below:
 <!-- @Harsh-Panara Add more details on the GUI usage and first time setup here.\ -->
 
 ### 🪛 First-Time Setup
-GUI will help you with the following steps:
+
+For a complete First-Time guide, see [Getting Started](./getting_started.md).
 1. Assigning Actuator IDs
 2. Testing Actuator Connections
 3. Performing Initial Homing and Calibration
