@@ -67,7 +67,7 @@ To upload firmware to your Aero Hand device:
 
 Next step is to set the servo IDs, see the next section below.
 
-### Setting Servo -IDs
+#### Setting Servo -IDs
 
 1. **Power** the board with the 6V and connect USB.
 2. **Connect exactly one servo** to the bus.
@@ -87,7 +87,7 @@ Next step is to set the servo IDs, see the next section below.
 
 ![Setting Servo - IDs](imgs/set-id.PNG)
 
-### Notes & Troubleshooting
+##### Notes & Troubleshooting
 
 1. Make sure that the board has power and exactly one servo is connected before setting the ID.
 2. We recommend setting IDs for all servos in sequence (0–6). Any value apart from 0–6 will not be accepted.
@@ -96,12 +96,12 @@ Next step is to set the servo IDs, see the next section below.
 5. If you receive 65535 in old ID, new ID, and current limit, this indicates that two or more servos are present and the Set ID mode will not proceed.
 6. Once all IDs are Set, We recommend not to use this function once you are playing and training with the hand.
 
-### Trim Servo
+#### Trim Servo
 
 When using Trim Servo:
 First, you will be asked to enter the servo channel (0–6), which represents the sequence: thumb abduction, thumb flexion, thumb tendon, and the four fingers. Next, enter the degrees offset. We recommend making adjustments in steps of 10–20 degrees, then observe the effect using the sliders. If something unusual happens, you may need to perform the homing procedure again to reset the extend count to the baseline.
 
-#### Left Hand Actuator Table
+##### Left Hand Actuator Table
 | Channel | Actuator Name          | Extend Count | Grasp Count | Motion (°) | Direction | 
 |---------|------------------------|--------------|-------------|------------|-----------|
 | 0       | Thumb Abduction        | 2048         | 3186        | 100        | +1        | 
@@ -112,7 +112,7 @@ First, you will be asked to enter the servo channel (0–6), which represents th
 | 5       | Ring Finger            | 817          | 4095        | 288        | -1        |
 | 6       | Pinky Finger           | 817          | 4095        | 288        | -1        |
 
-#### Right Hand Actuator Table
+##### Right Hand Actuator Table
 
 | Channel | Actuator Name          | Extend Count | Grasp Count | Motion (°) | Direction | 
 |---------|------------------------|--------------|-------------|------------|-----------|
@@ -144,7 +144,7 @@ This means the servo will now move through 2867 counts instead of the original 2
 
 ![Trim Servo](imgs/trim-servo.png)
 
-#### Notes & Troubleshooting
+##### Notes & Troubleshooting
 1. Do not enter values like 360 or -360 degrees, as this may completely change your control direction—please avoid this.
 2. If the servo becomes too tight, try loosening it by entering degrees in the opposite direction to your last adjustment.
 3. Use this function only when you want fine control over the servo's range of motion.
