@@ -1,4 +1,4 @@
-# First - Time Setup
+# First-Time Setup
 ## ⚙️ Installation
 
 The SDK is currently tested for Python 3.10 and above.
