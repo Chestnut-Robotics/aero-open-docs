@@ -28,7 +28,7 @@ This approach achieves high dexterity with fewer actuators, resulting in a light
 - 6 V DC power input and USB communication
 - Fully open-source CAD and PCB design
 
-All mechanical and electrical design files are available in the [`aero-open-hardware`](https://github.com/TetherIA/aero-open-hardware) repository.
+All mechanical and electrical design files are available in the [`hardware`](https://github.com/TetherIA/aero-hand-open/tree/main/hardware) folder.
 
 ---
 
@@ -40,7 +40,7 @@ The onboard controller runs custom firmware supporting:
 - Real-time command streaming via ROS 2 and Python SDK
 - Built-in calibration and diagnostics utilities
 
-Firmware source code is hosted in [`aero-open-firmware`](https://github.com/TetherIA/aero-open-firmware).
+Firmware source code is hosted in the [`firmware`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) folder.
 
 ---
 
@@ -51,7 +51,7 @@ Developers can interface with the hand through:
 - **ROS 2 packages** exposing scripting, teleoperation, and logging
 - Example nodes for control, data collection, and policy playback
 
-Software API is maintained in [`aero-open-sdk`](https://github.com/TetherIA/aero-open-sdk).
+Software API is maintained in the [`sdk`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) folder.
 
 ---
 
@@ -68,11 +68,11 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 
 | Component | Repository | Description |
 |------------|-------------|-------------|
-| Hardware | [`aero-open-hardware`](https://github.com/TetherIA/aero-open-hardware) | CAD models, assembly, and tendon routing |
-| Firmware | [`aero-open-firmware`](https://github.com/TetherIA/aero-open-firmware) | Embedded control software |
-| SDK / GUI | [`aero-open-sdk`](https://github.com/TetherIA/aero-open-sdk) | Python SDK and GUI |
-| Documentation | [`aero-open-docs`](https://github.com/TetherIA/aero-open-docs) | Documentation source |
 | Monorepo | [`aero-hand-open`](https://github.com/TetherIA/aero-hand-open) | Consolidated repository for community contributions |
+| Hardware | [`hardware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/hardware) | CAD models, assembly, and tendon routing |
+| Firmware | [`firmware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) | Embedded control software |
+| SDK / GUI | [`sdk folder`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) | Python SDK and GUI |
+| Documentation | [`docs folder`](https://github.com/TetherIA/aero-hand-open/tree/main/docs) | Documentation source |
 
 ---
 
@@ -89,4 +89,4 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 ## License
 
 All components of Aero Hand Open are released under permissive open-source licenses.  
-Please refer to individual repositories for license details.
+Please refer to the [LICENSE FILE](https://github.com/TetherIA/aero-hand-open/blob/main/LICENSE.md) for license details.
