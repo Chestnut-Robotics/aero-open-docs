@@ -130,7 +130,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/eRAzPMCm',
+                href: 'https://discord.gg/CuREEmFz',
               },
               {
                 label: 'X',
@@ -139,6 +139,10 @@ const config = {
               {
                 label: 'Youtube',
                 href: 'https://www.youtube.com/@TetherIA_ai',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/tetheria/',
               },
             ],
           },
