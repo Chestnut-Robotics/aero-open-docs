@@ -95,16 +95,16 @@ We use the following joint naming and indexing convention to refer to each joint
 | Thumb      | thumb_cmc_flex   | 1     |
 | Thumb      | thumb_mcp       | 2     |
 | Thumb      | thumb_ip        | 3     |
-| Index   | index_flex     | 4     |
+| Index   | index_mcp     | 4     |
 | Index   | index_pip      | 5     |
 | Index   | index_dip      | 6     |
-| Middle  | middle_flex    | 7     |
+| Middle  | middle_mcp    | 7     |
 | Middle  | middle_pip     | 8     |
 | Middle  | middle_dip     | 9     |
-| Ring    | ring_flex      | 10    |
+| Ring    | ring_mcp      | 10    |
 | Ring    | ring_pip       | 11    |
 | Ring    | ring_dip       | 12    |
-| Pinky   | pinky_flex     | 13    |
+| Pinky   | pinky_mcp     | 13    |
 | Pinky   | pinky_pip      | 14    |
 | Pinky   | pinky_dip      | 15    |
 
@@ -147,16 +147,16 @@ Each joint's limits in degrees are as per below Table:
 | thumb_cmc_flex   | 0                   | 55                  |
 | thumb_mcp       | 0                   | 90                  |
 | thumb_ip        | 0                   | 90                  |
-| index_flex     | 0                   | 90                  |
+| index_mcp     | 0                   | 90                  |
 | index_pip      | 0                   | 90                 |
 | index_dip      | 0                   | 90                  |
-| middle_flex    | 0                   | 90                  |
+| middle_mcp    | 0                   | 90                  |
 | middle_pip     | 0                   | 90                 |
 | middle_dip     | 0                   | 90                  |
-| ring_flex      | 0                   | 90                  |
+| ring_mcp      | 0                   | 90                  |
 | ring_pip       | 0                   | 90                 |
 | ring_dip       | 0                   | 90                  |
-| pinky_flex     | 0                   | 90                  |
+| pinky_mcp     | 0                   | 90                  |
 | pinky_pip      | 0                   | 90                 |
 | pinky_dip      | 0                   | 90                  |
 
@@ -207,7 +207,7 @@ The compact representation consists of the following 7 entries, representing a g
 | 3     | index_mcp, index_pip & index_dip | All three joints of the index finger are controlled by a single actuator. |
 | 4     | middle_mcp, middle_pip & middle_dip | All three joints of the middle finger are controlled by a single actuator. |
 | 5     | ring_mcp, ring_pip & ring_dip       | All three joints of the ring finger are controlled by a single actuator. |
-| 6     | little_mcp, little_pip & little_dip   | All three joints of the little finger are controlled by a single actuator. |
+| 6     | pinky_mcp, pinky_pip & pinky_dip   | All three joints of the pinky finger are controlled by a single actuator. |
 
 `set_joint_positions` method will convert this compact representation to the full 16 joint angles representation internally by copying the values to the joints that are controlled by the same actuator.
 
@@ -226,7 +226,7 @@ The above example can be intuitively read as:
 - move all joints of index finger to 30 degrees
 - move all joints of middle finger to 45 degrees
 - move all joints of ring finger to 60 degrees
-- move all joints of little finger to 90 degrees
+- move all joints of pinky finger to 90 degrees
 
 Programmatically this can be done as below:
 
@@ -254,10 +254,10 @@ We use the below Actuations indexing and Naming conventions to refer to the actu
 - 5 - ring_tendon_act
 - 6 - pinky_tendon_act
 
-This can also be accessed in the code by calling the `actuations_names` property of the AeroHand class.
+This can also be accessed in the code by calling the `actuation_names` property of the AeroHand class.
 
 ```python
-print(aero_hand.actuations_names)
+print(aero_hand.actuation_names)
 ```
 
 Expected output:
@@ -285,8 +285,15 @@ Notice that the thumb_tendon_act has a negative lower limit. This is due to the 
 
 Actuation limits can be accessed programmatically as below:
 ```python
-print(aero_hand.actuations_lower_limits)
-print(aero_hand.actuations_upper_limits)
+print(aero_hand.actuation_lower_limits)
+print(aero_hand.actuation_upper_limits)
+```
+
+To control the hand at the actuator level, you can use the `set_actuations` method which takes in a list of 7 actuation values in degrees.
+
+```python
+target_actuations = [50.0, 30.0, 100.0, 150.0, 150.0, 150.0, 150.0]
+aero_hand.set_actuations(target_actuations)
 ```
 
 ### 📡 Receiving Data from the Hand
