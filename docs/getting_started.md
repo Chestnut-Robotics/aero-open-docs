@@ -172,6 +172,8 @@ This means the servo will now move through 2867 counts instead of the original 2
 * **GET_CURR** 🔌: Requests currents in **mA**, **signed** — the **sign reflects motor direction** relative to the channel’s servo direction (use magnitude to gauge load).
 * **GET_TEMP** 🌡️: Requests temperatures (°C) from each servo.
 * **GET_ALL** 📦: Convenience burst that triggers **POS + VEL + CURR + TEMP** reads in one go and prints results to the log.
+* **Set Speed** 🚀: Sets the speed limit for a selected servo ID (opcode `0x31`). This sets the maximum speed for that servo; by default, the speed is max and resets after reboot.
+* **Set Torque** 💪: Sets the maximum torque limit for a selected servo ID (opcode `0x32`). This limits the maximum torque; by default, torque is max and resets after reboot.
 
 ### 🧷 Sliders Panel (Center)
 
