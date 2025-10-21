@@ -33,7 +33,7 @@ pip install aero-hand-sdk
 Launch the GUI from a terminal after installation:
 
 ```bash
-aero-hand-gui
+aero-open-gui
 ```
 
 > If your system can’t find the command, ensure your Python environment’s scripts directory is on PATH and that the package was installed into the active environment.
