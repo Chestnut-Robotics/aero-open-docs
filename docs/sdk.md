@@ -303,7 +303,7 @@ aero_hand.set_actuations(target_actuations)
 ### Actuation Torque Control
 You can directly send torque control command to the seven motors. The torque control only works for the hand closing direction. The control API is `hand.ctrl_torque(torque_list)`.
 
-See more examples in [torque control example](https://github.com/TetherIA/aero-open-sdk/blob/harsh/dev2/examples/torque_control.py) and [position torque switching](https://github.com/TetherIA/aero-open-sdk/blob/harsh/dev2/examples/position_torque_switching.py)
+See more examples in [torque control example](https://github.com/TetherIA/aero-open-sdk/blob/main/examples/torque_control.py) and [position torque switching](https://github.com/TetherIA/aero-open-sdk/blob/main/examples/position_torque_switching.py)
 
 :::note
 We recommend to use switching only when necessary as frequent switching may lead to unexpected behavior. If the hand is not responding as expected, please restart the program and try to do homing before switching modes.
