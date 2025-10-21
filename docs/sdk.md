@@ -241,9 +241,13 @@ aero_hand.set_joint_positions(compact_target_positions)
 :::
 
 
-### 🔧 Actuation-Level Control (Advanced)
+### 🔧 Actuation Position Control (Advanced)
 
-While we suggest that the user use `set_joint_positions` method to control the hand, for advanced users we also provide the `set_actuations` method to control the hand at the actuator level.  
+While we recommend using the `set_joint_positions` method to control the hand, we also provide the `set_actuations` method for advanced users who need actuator-level control.  
+
+:::note
+**Important:** The thumb's CMC abduction, CMC flexion, and MCP-IP flexion are highly coupled by mechanical design. Always keep this coupling in mind when directly controlling the actuations. For example, if you change the `thumb_cmc_abd_act` value alone, you will observe that all thumb joints (CMC abduction, CMC flexion, MCP, and IP joints) will move due to the coupling mechanism.
+:::
 
 We use the below Actuations indexing and Naming conventions to refer to the actuators:
 - 0 - thumb_cmc_abd_act
@@ -296,6 +300,15 @@ target_actuations = [50.0, 30.0, 100.0, 150.0, 150.0, 150.0, 150.0]
 aero_hand.set_actuations(target_actuations)
 ```
 
+### Actuation Torque Control
+You can directly send torque control command to the seven motors. The torque control only works for the hand closing direction. The control API is `hand.ctrl_torque(torque_list)`.
+
+See more examples in [torque control example](https://github.com/TetherIA/aero-open-sdk/blob/main/examples/torque_control.py) and [position torque switching](https://github.com/TetherIA/aero-open-sdk/blob/main/examples/position_torque_switching.py)
+
+:::note
+We recommend to use switching only when necessary as frequent switching may lead to unexpected behavior. If the hand is not responding as expected, please restart the program and try to do homing before switching modes.
+:::
+
 ### 📡 Receiving Data from the Hand
 
 The API also provides methods to read the current state of the actuators via various getter methods.
@@ -343,7 +356,7 @@ This will return a list of 7 actuation speeds in rpm.
 
 ### 💡 Examples
 
-To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-open-sdk/tree/9ed354aa429a97728cd94b616776ebd62bf5eff9/examples)
+To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-open-sdk/tree/main/examples)
 
 
 <div align="center">
