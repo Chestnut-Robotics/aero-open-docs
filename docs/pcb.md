@@ -22,7 +22,7 @@ The Aero Hand consists of two custom PCB boards: **Board A** and **Board B**. Al
 - Board B is essential for diagnostics and safe power delivery.
 ![PCB Schematic Board B](./imgs/boardbschematic.png)
 ![PCB layout Board B](./imgs/boardblayout.png)
-![PCB 3D Design Board B](./imgs/boardb3d.png)
+![Board B 3D rendered view](./imgs/boardb3d.png)
 
 ---
 
