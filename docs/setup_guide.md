@@ -4,19 +4,19 @@ This page contains the complete hardware setup connections guide for the Aero Ha
 
 ## View Instructions
 
-You can view the setup guide PPTX below, or [Download it directly](./Hardware_Setup_Guide.pptx).
+You can [view or download the setup guide PDF](./Hardware_Setup_Guide.pdf).
 
 <div style={{position: 'relative', width: '100%', height: '800px', border: '1px solid #ccc', borderRadius: '4px', overflow: 'hidden'}}>
-	<iframe
-		src={require('./Hardware_Setup_Guide.pptx').default}
-		style={{width: '100%', height: '100%', border: 'none'}}
-		title="Hardware Setup Guide PPTX"
-	/>
+  <iframe
+    src={require('./Hardware_Setup_Guide.pdf').default}
+    style={{width: '100%', height: '100%', border: 'none'}}
+    title="Hardware Setup Guide PDF"
+  />
 </div>
 
 ## Download
 
-If the embedded viewer doesn't work in your browser, you can [download the PPTX file here](./Hardware_Setup_Guide.pptx).
+If the embedded viewer doesn't work in your browser, you can [download the PDF file here](./Hardware_Setup_Guide.pdf).
 
 ## Manual Wiring Steps
 
