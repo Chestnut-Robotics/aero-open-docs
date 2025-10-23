@@ -8,9 +8,9 @@ The Aero Hand consists of two custom PCB boards: **Board A** and **Board B**. Al
 - Features **8 Molex connectors** for connecting all servos in the hand.
 - Includes a **JST connector P3.96mm** for outer wiring and fitting inside the hand enclosure.
 - Designed for compact integration and reliable servo connectivity.
-![PCB Schematic Board A](./imgs/boardaschematic.png)
-![PCB layout Board A](./imgs/boardalayout.png)
-![PCB 3D Design Board A](./imgs/boarda3d.png)
+![Board A schematic showing 8 Molex connectors and JST connector P3.96mm](./imgs/boardaschematic.png)
+![Board A PCB layout view](./imgs/boardalayout.png)
+![Board A 3D rendered view](./imgs/boarda3d.png)
 
 ## Board B
 - Includes a **JST connector** and **one Molex connector** for testing individual servos and debugging.
