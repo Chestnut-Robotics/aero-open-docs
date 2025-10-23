@@ -90,3 +90,9 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 
 All components of Aero Hand Open are released under permissive open-source licenses.  
 Please refer to the [LICENSE FILE](https://github.com/TetherIA/aero-hand-open/blob/main/LICENSE.md) for license details.
+
+<div align="center">
+
+Made with ❤️ by **TetherIA Robotics**
+
+</div>

@@ -27,3 +27,9 @@ The Aero Hand consists of two custom PCB boards: **Board A** and **Board B**. Al
 ---
 
 For more details on communication and control, refer to our [SDK Documentation](https://github.com/TetherIA/aero-open-sdk).
+
+<div align="center">
+
+Made with ❤️ by **TetherIA Robotics**
+
+</div>

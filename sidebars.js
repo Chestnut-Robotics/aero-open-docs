@@ -24,7 +24,8 @@ const sidebars = {
     'firmware',                 // Firmware documentation
     'sdk',                      // SDK documentation
     'hand_sim',                 // Hand simulation
-    'pcb',                      // PCB documentation
+    'setup_guide',              // Hardware setup
+    'PCB',                      // PCB documentation
     'ros2_comm',                // ROS2 communication
     'teleop',                   // Teleoperation
     

@@ -248,10 +248,7 @@ If you would like to improve the [Firmware](https://github.com/TetherIA/aero-ope
 * Email: **[contact@tetheria.ai](mailto:contact@tetheria.ai)**
 
 <div align="center">
-  <br/>
-    <b>Happy building!</b><br/>
-    Try something new, Break things safely, Share what you learn.<br/>
-    If this helps, please ⭐ the repo and share it with others!<br/>
-  <br/><br/>
-  Built with ❤️ by TetherIA.ai
+
+Made with ❤️ by **TetherIA Robotics**
+
 </div>
