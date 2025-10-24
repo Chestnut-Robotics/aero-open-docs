@@ -48,7 +48,7 @@ Step3: Once your setup is ready, It will look something like this.
 
 
 :::tip
-If you have any questions, please reach out to our community on [Discord](https://discord.gg/CuREEmFz).
+If you have any questions, please reach out to our community on [Discord](https://discord.gg/ZQKWK7NebQ).
 :::
 
 <div align="center">
