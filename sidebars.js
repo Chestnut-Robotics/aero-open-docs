@@ -19,15 +19,15 @@ const sidebars = {
   tutorialSidebar: [
     'intro',                    // Introduction page
     'assembly',                 // Assembly Instructions
-    'mechanical',               // Mechanical documentation
+    'hardware_setup',           // Hardware setup
     'getting_started',          // Getting Started guide
-    'firmware',                 // Firmware documentation
     'sdk',                      // SDK documentation
     'hand_sim',                 // Hand simulation
     'pcb',                      // PCB documentation
+    'firmware',                 // Firmware documentation
+    'mechanical',               // Mechanical documentation
     'ros2_comm',                // ROS2 communication
     'teleop',                   // Teleoperation
-    
   ],
 };
 

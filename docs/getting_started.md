@@ -204,3 +204,9 @@ Prefer scripting or automation? Use the Python SDK to send the same 16‑byte fr
 
 * Import the high‑level class (e.g., `AeroHand`) and browse **examples** in this repo’s `examples/` folder.
 * The GUI and SDK speak the **same protocol**, so your scripts and the app can be used interchangeably during development.
+
+<div align="center">
+
+Made with ❤️ by **TetherIA Robotics**
+
+</div>
