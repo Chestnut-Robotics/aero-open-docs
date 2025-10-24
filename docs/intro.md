@@ -37,7 +37,7 @@ All mechanical and electrical design files are available in the [`hardware`](htt
 The onboard controller runs custom firmware supporting:
 - Position, velocity, and torque control modes
 - High-frequency communication over USB
-- Real-time command streaming via ROS 2 and Python SDK
+- Real-time command streaming via Python SDK
 - Built-in calibration and diagnostics utilities
 
 Firmware source code is hosted in the [`firmware`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) folder.
@@ -48,10 +48,12 @@ Firmware source code is hosted in the [`firmware`](https://github.com/TetherIA/a
 
 Developers can interface with the hand through:
 - A **Python SDK** for joint, tendon, and sensor interfaces
-- **ROS 2 packages** exposing scripting, teleoperation, and logging
+- **ROS 2 packages** exposing communication, teleoperation, and and RL policy deployment, etc.
 - Example nodes for control, data collection, and policy playback
 
 Software API is maintained in the [`sdk`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) folder.
+
+ROS2 packages is maintained in the [`ros2`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) folder.
 
 ---
 
@@ -69,9 +71,10 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 | Component | Repository | Description |
 |------------|-------------|-------------|
 | Monorepo | [`aero-hand-open`](https://github.com/TetherIA/aero-hand-open) | Consolidated repository for community contributions |
-| Hardware | [`hardware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/hardware) | CAD models, assembly, and tendon routing |
+| Hardware | [`hardware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/hardware) | CAD models, assembly, and PCB design|
 | Firmware | [`firmware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) | Embedded control software |
 | SDK / GUI | [`sdk folder`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) | Python SDK and GUI |
+| ROS2 | [`ros2 folder`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) | ROS2 packages for URDF, TeleOp, RL policy deployment, etc. |
 | Documentation | [`docs folder`](https://github.com/TetherIA/aero-hand-open/tree/main/docs) | Documentation source |
 
 ---
@@ -79,10 +82,11 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 ## Getting Started
 
 - [Build and assemble the hand →](./assembly.md)  
-- [Flash and verify firmware →](./firmware.md)  
-- [Connect via ROS 2 or Python SDK →](./sdk.md)
-- [Getting Started with GUI of SDK →](./getting_started.md)  
+- [Set up hardware→](./setup_guide.md) 
+- [Flash and verify firmware →](./getting_started.md) 
+- [Getting Started with GUI or SDK →](./sdk.md)   
 - [Run simulation in MuJoCo →](./hand_sim.md)
+- [Understand and modify firmware →](./firmware.md)
 
 ---
 

@@ -1,6 +1,6 @@
 # PCB Overview
 
-The Aero Hand consists of two custom PCB boards: **Board A** and **Board B**. All design files - including Gerber files, KiCad project files, BOM, and CPL - are available in our [GitHub Repository Link](<https://github.com/TetherIA/aero-open-hardware>).
+The Aero Hand consists of two custom PCB boards: **Board A** and **Board B**. All design files - including Gerber files, KiCad project files, BOM, and CPL - are available in our [GitHub Repository Link](<https://github.com/TetherIA/aero-hand-open/tree/main/hardware>).
 
 ---
 
