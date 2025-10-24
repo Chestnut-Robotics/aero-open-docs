@@ -82,7 +82,7 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 ## Getting Started
 
 - [Build and assemble the hand →](./assembly.md)  
-- [Set up hardware→](./setup_guide.md) 
+- [Set up hardware→](./hardware_setup.md) 
 - [Flash and verify firmware →](./getting_started.md) 
 - [Getting Started with GUI or SDK →](./sdk.md)   
 - [Run simulation in MuJoCo →](./hand_sim.md)
