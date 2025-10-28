@@ -26,8 +26,8 @@ const sidebars = {
     'pcb',                      // PCB documentation
     'firmware',                 // Firmware documentation
     'mechanical',               // Mechanical documentation
-    'ros2_comm',                // ROS2 communication
-    'teleop',                   // Teleoperation
+    // 'ros2_comm',                // ROS2 communication
+    // 'teleop',                   // Teleoperation
   ],
 };
 
