@@ -11,7 +11,7 @@ The SDK is currently tested for Python 3.10 and supports Linux and Windows.
 ### 📦 Install via pip
 
 ```bash
-pip install aero-hand-sdk
+pip install aero-open-sdk
 ```
 
 ### 🧩 Install from source (editable mode)
@@ -40,7 +40,7 @@ Make sure you've installed the SDK before running the below command [(see Instal
 Run the GUI with:
 
 ```bash
-aero-hand-gui
+aero-open-gui
 ```
 
 You’ll see an interactive configuration interface similar to below:
