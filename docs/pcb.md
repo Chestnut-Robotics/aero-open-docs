@@ -6,7 +6,7 @@ All design files—including Gerber files, KiCad project files, BOM, and CPL—a
 
 ---
 
-## Board A (Fits Inside Hand)
+## PCB Board (Fits Inside Hand)
 - 7 Molex connectors for connecting all servos.
 - XT-30 Connector to power the hand.
 - USB-C Connector to control the hand.
