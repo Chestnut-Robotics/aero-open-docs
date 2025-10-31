@@ -13,9 +13,9 @@ All design files—including Gerber files, KiCad project files, BOM, and CPL—a
 - Available in both left and right hand variants for optimal fit.
 
 ### Board Images
-![Board schematic](./imgs/boardschematic.png)
-![Board PCB layout](./imgs/boardlayout.png)
-![Board 3D view](./imgs/board3d.png)
+![Aero Hand PCB schematic diagram](./imgs/boardschematic.png)
+![Aero Hand PCB layout view](./imgs/boardlayout.png)
+![Aero Hand PCB 3D rendered view](./imgs/board3d.png)
 
 > **Note:** The above images are for the right hand. You can find the design files for the left hand in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/hardware).
 
