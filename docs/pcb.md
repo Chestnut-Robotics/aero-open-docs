@@ -1,28 +1,24 @@
 # PCB Overview
 
-The Aero Hand consists of two custom PCB boards: **Board A** and **Board B**. All design files - including Gerber files, KiCad project files, BOM, and CPL - are available in our [GitHub Repository Link](<https://github.com/TetherIA/aero-hand-open/tree/main/hardware>).
+Our Aero Hand features a custom PCB design that fits seamlessly inside the hand enclosure, with dedicated layouts for both left and right hands. The design ensures reliable connectivity, compact integration, and ease of assembly for all actuators and electronics.
+
+All design files—including Gerber files, KiCad project files, BOM, and CPL—are available in our [GitHub Repository](https://github.com/TetherIA/aero-hand-open/tree/main/hardware).
 
 ---
 
-## Board A
-- Features **8 Molex connectors** for connecting all servos in the hand.
-- Includes a **JST connector P3.96mm** for outer wiring and fitting inside the hand enclosure.
-- Designed for compact integration and reliable servo connectivity.
-![Board A schematic showing 8 Molex connectors and JST connector P3.96mm](./imgs/boardaschematic.png)
-![Board A PCB layout view](./imgs/boardalayout.png)
-![Board A 3D rendered view](./imgs/boarda3d.png)
+## PCB Board (Fits Inside Hand)
+- 7 Molex connectors for connecting all servos.
+- XT-30 Connector to power the hand.
+- USB-C Connector to control the hand.
+- Available in both left and right hand variants for optimal fit.
 
-## Board B
-- Includes a **JST connector** and **one Molex connector** for testing individual servos and debugging.
-- Features a **terminal block** to connect a regulated 6V, 10A power supply for the servos.
-- Hosts the **ESP32-S3** microcontroller with a **USB-C port** for:
-	- Powering the ESP32-S3
-	- Communication between PC and ESP32-S3
-	- Interfacing with the hand
-- Board B is essential for diagnostics and safe power delivery.
-![PCB Schematic Board B](./imgs/boardbschematic.png)
-![PCB layout Board B](./imgs/boardblayout.png)
-![Board B 3D rendered view](./imgs/boardb3d.png)
+### Board Images
+![Aero Hand PCB schematic diagram](./imgs/boardschematic.png)
+![Aero Hand PCB layout view](./imgs/boardlayout.png)
+![Aero Hand PCB 3D rendered view](./imgs/board3d.png)
+
+> **Note:** The above images are for the right hand. You can find the design files for the left hand in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/hardware).
+
 
 ---
 
