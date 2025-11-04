@@ -1,6 +1,6 @@
 ---
 id: ros2
-title: ROS 2 — Aero Hand Open
+title: ROS2
 sidebar_position: 6
 description: Hardware node, teleoperation, common message types, and RL policy deployment for the Aero Hand Open.
 keywords:
@@ -34,10 +34,10 @@ aero-hand-open/
       └─ aero_hand_open_rl/       # RL policy deployment
 ```
 
-- Hardware node: <https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py>  
-- Teleop: <https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop>  
-- Messages: <https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg>  
-- RL deploy: <https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md>
+- Hardware node: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py)
+- Teleop: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop)
+- Messages: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
+- RL deploy: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
 
 ---
 
@@ -189,7 +189,7 @@ Executables (from `setup.py`):
 
 ## 3) Common messages — aero_hand_open_msgs/msg
 
-Browse the `.msg` files here: <https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg>
+Browse the `.msg` files here: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
 
 **JointControl.msg**
 
@@ -273,7 +273,7 @@ rclpy.spin(Echo())
 
 ## 4) RL policy deployment — aero_hand_open_rl
 
-See README: <https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md>
+See README: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
 
 ### What it does
 
@@ -317,10 +317,10 @@ Check the README for exact dependencies (SDK/firmware versions, sim environment,
 
 ## See also
 
-- Source repo (ROS 2): <https://github.com/TetherIA/aero-hand-open/tree/main/ros2>
-- Messages: <https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg>
-- Teleop: <https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop>
-- RL deploy README: <https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md>
+- Source repo (ROS 2): [github.com/TetherIA/aero-hand-open/tree/main/ros2](https://github.com/TetherIA/aero-hand-open/tree/main/ros2)
+- Messages: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
+- Teleop: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop)
+- RL deploy README: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
 
 With these packages in place, you have a full ROS 2 stack that spans hardware control, human input,
 and learning-based autonomy for the TetherIA Aero Hand Open.

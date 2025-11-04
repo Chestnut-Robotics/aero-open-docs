@@ -1,4 +1,4 @@
-# Software
+# SDK
 
 After [assembling your hand](/docs/mechanical.md) and setting up the actuators (more on that in the [GUI section](#️-gui)), you can control your Aero hand using our Python SDK. SDK manages serial communication with the hardware using TetherIA’s custom [communication protocol](firmware.md).
 
