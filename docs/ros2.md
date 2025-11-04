@@ -315,12 +315,6 @@ Check the README for exact dependencies (SDK/firmware versions, sim environment,
 
 ---
 
-## See also
 
-- Source repo (ROS 2): [github.com/TetherIA/aero-hand-open/tree/main/ros2](https://github.com/TetherIA/aero-hand-open/tree/main/ros2)
-- Messages: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
-- Teleop: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop)
-- RL deploy README: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
-
-With these packages in place, you have a full ROS 2 stack that spans hardware control, human input,
-and learning-based autonomy for the TetherIA Aero Hand Open.
+With these packages in place, you have a full ROS 2 stack that spans **hardware control**, **TeleOp**,
+and **AI policy deployment** for the TetherIA Aero Hand Open.
