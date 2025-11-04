@@ -22,7 +22,7 @@ All design files—including Gerber files, KiCad project files, BOM, and CPL—a
 
 ---
 
-For more details on communication and control, refer to our [SDK Documentation](https://github.com/TetherIA/aero-open-sdk).
+For more details on communication and control, refer to our [SDK Documentation](https://github.com/TetherIA/aero-hand-open/tree/main/sdk).
 
 <div align="center">
 
