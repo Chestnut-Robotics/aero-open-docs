@@ -13,12 +13,12 @@ pip install aero-hand-sdk
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/TetherIA/aero-open-sdk.git
+   git clone https://github.com/TetherIA/aero-hand-open.git
    ```
 
 2. Navigate to the cloned repository directory:
    ```bash
-   cd aero-open-sdk
+   cd sdk
    ```
 
 3. Install the package in editable mode:

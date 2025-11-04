@@ -231,7 +231,7 @@ This project is licensed under **Apache License‑2.0**
 
 We welcome community contributions!
 
-If you would like to improve the [Firmware](https://github.com/TetherIA/aero-open-firmware) or add new features:
+If you would like to improve the [Firmware](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) or add new features:
 
 1. Fork and create a feature branch.
 2. Add or modify opcodes and handlers as described in Section 9.
