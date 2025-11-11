@@ -28,3 +28,43 @@
   --ifm-color-primary-lightest: #f8f8fa;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Terms and Conditions Modal - Dark theme support */
+[data-theme='dark'] [class*='modalContent'] {
+  background: #1e2426 !important;
+  color: #dbdbdd !important;
+  border-color: #3a3f41 !important;
+}
+
+[data-theme='dark'] [class*='modalHeader'] {
+  border-bottom-color: #3a3f41 !important;
+}
+
+[data-theme='dark'] [class*='modalHeader'] h2 {
+  color: #dbdbdd !important;
+}
+
+[data-theme='dark'] [class*='modalBody'] h3,
+[data-theme='dark'] [class*='modalBody'] h4,
+[data-theme='dark'] [class*='modalBody'] p,
+[data-theme='dark'] [class*='modalBody'] li {
+  color: #dbdbdd !important;
+}
+
+[data-theme='dark'] [class*='highlightedText'] {
+  background-color: #3a2e0a !important;
+  border-left-color: #ffc107 !important;
+  color: #ffd54f !important;
+}
+
+[data-theme='dark'] [class*='checkboxContainer'] {
+  border-top-color: #3a3f41 !important;
+}
+
+[data-theme='dark'] [class*='checkboxLabel'] {
+  color: #dbdbdd !important;
+}
+
+[data-theme='dark'] [class*='modalFooter'] {
+  border-top-color: #3a3f41 !important;
+}
