@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Aero Hand',  
-  tagline: 'Empowering Physical AI with best dexterous hands',
+  tagline: 'Empowering Physical AI with the Best Dexterous Hands',
   favicon: 'img/Logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -87,7 +87,7 @@ const config = {
         contextualSearch: true,
       },
       navbar: {
-        title: 'TetherIA',
+        title: '',
         logo: {
           alt: 'TetherIA Logo',
           src: 'img/Logo.png',
