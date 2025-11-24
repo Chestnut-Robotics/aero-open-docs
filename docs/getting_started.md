@@ -6,7 +6,7 @@ The SDK is currently tested for Python 3.10 and above.
 ### 📦 Install via pip
 
 ```bash
-pip install aero-hand-sdk
+pip install aero-open-sdk
 ```
 
 ### 🧩 Install from source (editable mode)
