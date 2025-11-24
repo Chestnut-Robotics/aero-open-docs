@@ -3,22 +3,31 @@
 
 The SDK is currently tested for Python 3.10 and above.
 
-### 📦 Install via pip
+### 📦 Install via pip (Option 1, recommended)
+
+**For Mac and Linux:**
 
 ```bash
-pip install aero-hand-sdk
+pip install aero-open-sdk
 ```
 
-### 🧩 Install from source (editable mode)
+**For Windows (using PowerShell):**
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install aero-open-sdk
+```
+
+### 🧩 Install from source (Option 2, editable mode)
 
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/TetherIA/aero-hand-open.git
    ```
 
-2. Navigate to the cloned repository directory:
+2. Navigate to the SDK directory:
    ```bash
-   cd sdk
+   cd aero-hand-open/aero-open-sdk
    ```
 
 3. Install the package in editable mode:
@@ -32,11 +41,19 @@ pip install aero-hand-sdk
 
 Launch the GUI from a terminal after installation:
 
+**For Mac and Linux:**
+
 ```bash
 aero-open-gui
 ```
 
-> If your system can’t find the command, ensure your Python environment’s scripts directory is on PATH and that the package was installed into the active environment.
+**For Windows:**
+
+```powershell
+python -m aero_open_sdk
+```
+
+> **Note:** If your system can't find the command, ensure your Python environment's scripts directory is on PATH and that the package was installed into the active environment.
 
 <div align="center">
   ![Screenshot of GUI](imgs/gui.png)
