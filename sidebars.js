@@ -24,6 +24,7 @@ const sidebars = {
     'sdk',                      // SDK documentation
     'ros2',                     // ROS2 documentation
     'hand_sim',                 // Hand simulation
+    'mechanical_overview',      // Mechanical overview documentation
     'pcb',                      // PCB documentation
     'firmware',                 // Firmware documentation
     'mechanical',               // Mechanical documentation
