@@ -160,5 +160,3 @@ USB appears as a standard serial device on the host; the GUI and SDK connect to 
 
   * Fixed 7‑channel layout for all units
   * Normalized `[0.0, 1.0]` command range for easy integration into controllers and RL policies.
-
-This page provides the high‑level mechanical view of Aero Hand Open — what it looks like, how large it is, and how its motion and ports are exposed to your software and hardware stack.
