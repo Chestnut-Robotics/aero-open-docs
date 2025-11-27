@@ -5,7 +5,7 @@ The **TetherIA Aero Hand Open** features a physically accurate **tendon-driven a
 The hand can be simulated across multiple physics platforms. Currently, it supports the **[MuJoCo simulator](https://mujoco.org/)**, where it is fully integrated into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** for seamless visualization, training, and evaluation of tendon-space control policies. Support for additional simulation platforms is currently in progress.
 
 - **Hand Model:** [MuJoCo Menagerie – TetherIA Aero Hand Open](https://github.com/google-deepmind/mujoco_menagerie/tree/main/tetheria_aero_hand_open)  
-- **Training Tools:** [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground/)
+- **Training Tools:** [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground/tree/main/mujoco_playground/_src/manipulation/aero_hand)
 
 ---
 
@@ -123,7 +123,7 @@ While training results vary slightly due to stochasticity, runs consistently **c
 
 ## 3. Running a Pretrained Policy
 
-This example builds upon **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** as an educational platform. ~~We are actively working to merge **[our implementation](https://github.com/TetherIA/mujoco_playground_pr)** into the official repository.~~ This has been officially merged into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** in [commit 1bd244f](https://github.com/google-deepmind/mujoco_playground/commit/1bd244fa9c51fa7074c7a449934f556d898f7a15).
+This example builds upon **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** as an educational platform. ~~We are actively working to merge **[our implementation](https://github.com/TetherIA/mujoco_playground_pr)** into the official repository.~~ This has been officially merged into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground/tree/main/mujoco_playground/_src/manipulation/aero_hand)** in [commit 1bd244f](https://github.com/google-deepmind/mujoco_playground/commit/1bd244fa9c51fa7074c7a449934f556d898f7a15).
 
 To test a trained policy:
 ```bash
