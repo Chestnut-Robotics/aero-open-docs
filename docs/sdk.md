@@ -56,28 +56,69 @@ For a complete First-Time guide, see [Getting Started](./getting_started.md).
 2. Testing Actuator Connections
 3. Performing Initial Homing and Calibration
 
+## 🔌 Serial Port Setup
+
+Aero Hand connects to the host PC via a serial (USB) interface.
+To operate the SDK, you must specify the correct serial port for your device.
+
+### 🐧 Linux
+
+Most Linux systems assign the device path as `/dev/ttyACM0` or `/dev/ttyUSB0`. You can list connected serial devices with:
+
+```bash
+ls /dev/ttyACM* /dev/ttyUSB*
+```
+
+**💡 Persistent Device Path (Recommended)**
+
+Device names like `/dev/ttyUSB0` can change each time you reconnect.
+
+To get a persistent name, use the by-id symlink instead:
+
+```bash
+ls -l /dev/serial/by-id/
+```
+
+This will show you a list of connected serial devices with more descriptive names. Look for the one that corresponds to your Aero Hand. Which will look something like:
+```bash
+usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00
+```
+Then initialize your hand using that path:
+```python
+from aero_open_sdk.aero_hand import AeroHand
+
+aero_hand = AeroHand(
+  port="/dev/serial/by-id/usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00"
+)
+```
+✅ This ensures your connection always points to the correct device, even if you unplug and replug the hand or change the USB port.
+
+### 🪟 Windows
+On Windows, the device will appear as a COM port like `COM3` or `COM4`. You can find the correct COM port by checking the Device Manager under "Ports (COM & LPT)".
+
+You can then Initialize your hand with the detected COM port:
+```python
+from aero_open_sdk.aero_hand import AeroHand
+aero_hand = AeroHand(port="COM3")
+```
+**💡 Making the COM Port Persistent**
+
+Windows does not have a /by-id/ system like Linux, so the COM number can change if you plug the device into a different USB port.
+
+To make it permanent, you can assign a fixed COM number:
+1. Plug in the Aero Hand and open Device Manager.
+2. Find it under Ports (COM & LPT).
+3. Right-click → Properties → Port Settings → Advanced.
+4. In COM Port Number, select an unused port (e.g., COM5).
+5. Click OK to save.
+
+You can now always use this COM port when initializing the SDK.
+
+---
 
 ## 🧰 SDK Overview
 
 The SDK exposes a high-level Python API for commanding, monitoring, and debugging the hand.
-
-### 🔌 Initialization
-
-You can intialize the hand using the `AeroHand` class:
-
-```python
-from aero_open_sdk.aero_hand import AeroHand
-
-aero_hand = AeroHand(port="/dev/ttyACM0")
-```
-This will open the `serial` port for communicating with the hand. 
-
-:::note
-By default, **Linux** assigns the first connected device to `/dev/ttyACM0`, while **Windows** typically uses `COM1` or `COM2`.  
-However, this is **not guaranteed**, the exact port may vary depending on your system and connected devices.  
-Always verify the correct port before initializing the hand.  
-For detailed steps on identifying and configuring serial ports, refer to our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk).
-:::
 
 ### ✋ Joint Representation
 
@@ -357,6 +398,89 @@ This will return a list of 7 actuation speeds in rpm.
 ### 💡 Examples
 
 To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
+
+
+## 🧰 Troubleshooting
+
+### 1. Installation Fails (`pip install` error)
+
+If installation fails, try the following steps:
+
+- Check your Python version:
+
+    Make sure you have Python 3.10 or higher installed.
+
+- 🔧 Upgrade pip to the latest version:
+
+    Our package requires an up-to-date version of pip.
+
+    You can upgrade pip with:
+    ```bash
+    pip install --upgrade pip
+    ```
+
+On Windows, if you see error like "pip is not recognized", use the `py` launcher command instead:
+
+    ```bash
+    py -m pip install --upgrade pip
+    ```
+
+### 2. Path Mismatch on Windows
+
+- You may not have the Python Scripts path added to your system PATH environment variable.
+
+- To fix this, you can either:
+
+  1. Add the Python Scripts directory (e.g., `C:\Users\<YourName>\AppData\Local\Programs\Python\Python310\Scripts`) to your system PATH.
+  2. Or use the `py` launcher command to launch the GUI after installation:
+      ```bash
+      py -m aero_open_sdk
+      ```
+  3. Create a virtual environment and install the package there.
+      ```bash
+      python -m venv venv
+      .\venv\Scripts\activate
+      pip install aero-open-sdk
+      aero-open-gui
+      ```
+
+### 3. Linux Troubleshooting: Serial Port Permission
+
+If you see a permission error when connecting to the serial port (e.g., `/dev/ttyACM0`), do the following:
+
+1. Find your username:
+   ```sh
+   whoami
+   ```
+2. Add your user to the `dialout` group (replace `yourusername` with the output from `whoami`):
+   ```sh
+   sudo usermod -a -G dialout yourusername
+   ```
+3. **Restart your system** (or log out and log back in).
+4. After restart, open a terminal and run:
+   ```sh
+   groups
+   ```
+   You should see your username and `dialout` listed.
+5. Try connecting to the serial port again in the GUI.
+
+If you still see permission errors, check device permissions with:
+```sh
+ls -l /dev/ttyACM0
+```
+You may need to temporarily set permissions:
+```sh
+sudo chmod 666 /dev/ttyACM0
+```
+
+
+## 💬 Support
+
+We welcome community contributions! If you encounter issues or have feature requests:
+- Open a [GitHub Issue](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/issues)
+- Contact us at **contact@tetheria.ai**
+
+---
 
 
 <div align="center">
