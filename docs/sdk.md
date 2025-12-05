@@ -23,7 +23,7 @@ pip install aero-open-sdk
 
 2. Navigate to the cloned repository:
    ```bash
-   cd sdk
+   cd aero-hand-open/sdk
    ```
 
 3. Install the package in editable mode:
