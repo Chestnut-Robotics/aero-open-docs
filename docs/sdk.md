@@ -477,7 +477,7 @@ sudo chmod 666 /dev/ttyACM0
 ## 💬 Support
 
 We welcome community contributions! If you encounter issues or have feature requests:
-- Open a [GitHub Issue](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/issues)
+- Open a [GitHub Issue](https://github.com/TetherIA/aero-hand-open/issues)
 - Contact us at **contact@tetheria.ai**
 
 ---
