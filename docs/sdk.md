@@ -79,7 +79,7 @@ To get a persistent name, use the by-id symlink instead:
 ls -l /dev/serial/by-id/
 ```
 
-This will show you a list of connected serial devices with more descriptive names. Look for the one that corresponds to your Aero Hand. Which will look something like:
+This will show you a list of connected serial devices with more descriptive names. Look for the one that corresponds to your Aero Hand, which will look something like:
 ```bash
 usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00
 ```
