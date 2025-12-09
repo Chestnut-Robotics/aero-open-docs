@@ -123,6 +123,10 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
+              {
+                label: 'Aero Hand Open',
+                href: 'https://tetheria.github.io/aero-hand-open/',
+              },
             ],
           },
           {

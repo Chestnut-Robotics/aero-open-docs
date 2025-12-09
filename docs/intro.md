@@ -75,7 +75,6 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 | Firmware | [`firmware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) | Embedded control software |
 | SDK / GUI | [`sdk folder`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) | Python SDK and GUI |
 | ROS2 | [`ros2 folder`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) | ROS2 packages for URDF, TeleOp, RL policy deployment, etc. |
-| Documentation | [`docs folder`](https://github.com/TetherIA/aero-hand-open/tree/main/docs) | Documentation source |
 
 ---
 
