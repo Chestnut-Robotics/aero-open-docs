@@ -87,7 +87,8 @@ TODO(harsh): add explanation of two examples
 
 #### power_grasp
 
-
+#### Explore more examples
+More examples are avaiable at the [sdk folder](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
 
 
 
