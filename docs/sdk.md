@@ -4,7 +4,19 @@ After [assembling your hand](/docs/mechanical.md) and setting up the actuators (
 
 ---
 
-## ⚙️ Installation
+## For Normal Users
+
+### ⚙️ Installation
+
+The SDK is currently tested for Python 3.10 and supports Linux and Windows.
+
+#### 📦 Install via pip
+
+```bash
+pip install aero-open-sdk
+```
+
+#### 🧩 Install from source (editable mode)
 
 The SDK is currently tested for Python 3.10 and supports Linux and Windows.
 
@@ -33,7 +45,7 @@ pip install aero-open-sdk
 
 ---
 
-## 🖥️ GUI
+### 🖥️ GUI
 When setting up your hand for the first time, the **setup GUI** helps you configure actuator IDs and test the connections.
 Make sure you've installed the SDK before running the below command [(see Installation)](#️-installation)
 
@@ -49,19 +61,19 @@ You’ll see an interactive configuration interface similar to below:
 
 <!-- @Harsh-Panara Add more details on the GUI usage and first time setup here.\ -->
 
-### 🪛 First-Time Setup
+#### 🪛 First-Time Setup
 
 For a complete First-Time guide, see [Getting Started](./getting_started.md).
 1. Assigning Actuator IDs
 2. Testing Actuator Connections
 3. Performing Initial Homing and Calibration
 
-## 🔌 Serial Port Setup
+### 🔌 Serial Port Setup
 
 Aero Hand connects to the host PC via a serial (USB) interface.
 To operate the SDK, you must specify the correct serial port for your device.
 
-### 🐧 Linux
+#### 🐧 Linux
 
 Most Linux systems assign the device path as `/dev/ttyACM0` or `/dev/ttyUSB0`. You can list connected serial devices with:
 
@@ -93,7 +105,7 @@ aero_hand = AeroHand(
 ```
 ✅ This ensures your connection always points to the correct device, even if you unplug and replug the hand or change the USB port.
 
-### 🪟 Windows
+#### 🪟 Windows
 On Windows, the device will appear as a COM port like `COM3` or `COM4`. You can find the correct COM port by checking the Device Manager under "Ports (COM & LPT)".
 
 You can then Initialize your hand with the detected COM port:
@@ -114,9 +126,15 @@ To make it permanent, you can assign a fixed COM number:
 
 You can now always use this COM port when initializing the SDK.
 
+### 💡 Examples
+
+To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
+
 ---
 
-## 🧰 SDK Overview
+## For Advanced Users
+
+### 🧰 SDK Overview
 
 The SDK exposes a high-level Python API for commanding, monitoring, and debugging the hand.
 
@@ -395,12 +413,8 @@ current_actuation_speeds = aero_hand.get_actuator_speeds()
 This will return a list of 7 actuation speeds in rpm.
 
 
-### 💡 Examples
 
-To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
-
-
-## 🧰 Troubleshooting
+## Troubleshooting
 
 ### 1. Installation Fails (`pip install` error)
 
@@ -474,7 +488,7 @@ sudo chmod 666 /dev/ttyACM0
 ```
 
 
-## 💬 Support
+## Support
 
 We welcome community contributions! If you encounter issues or have feature requests:
 - Open a [GitHub Issue](https://github.com/TetherIA/aero-hand-open/issues)
