@@ -43,6 +43,7 @@ const sidebars = {
       },
       collapsed: false,
       items: [
+        'GUI',
         'firmware',
         'sdk',
         'ros2',
