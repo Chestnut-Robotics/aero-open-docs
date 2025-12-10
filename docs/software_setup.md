@@ -59,86 +59,13 @@ python -m aero_open_sdk
 
 ### Find port
 
-Aero Hand connects to the host PC via a USB-C cable. In order to operate the SDK on Windows machine, you must need to specify the correct serial port for your device.
+Press the 'Refresh' button near the Port selection; a dropdown menu will appear. If you do not have multiple serial devices connected on a Windows machine, refreshing will automatically select the correct COM port. This is convenient when using only one hand. If you have multiple hands, unplug all devices and plug in one at a time to identify which COM port corresponds to each hand (right or left).
 
-#### Linux
-You can initialize the hand directly if you are running and working only on one hand :
-```python
-from aero_open_sdk.aero_hand import AeroHand
-
-aero_hand = AeroHand()
-```
-
-On your Linux system , your Aero Hand open will show up as a device like `/dev/ttyACM0` or `/dev/ttyUSB0`. You can list down all the ports with :
-
-```bash
-ls /dev/ttyACM* /dev/ttyUSB*
-```
-**Note:** We recommend using a Persistent device path because the device names like `/dev/ttyACM0` can change each time you connect and can also be changed if you have multiple USB serial devices connected to your system. Also this will be helpful if you are working on more than 1 Hand.
-
-To get a persistent name , use the by-id symlink instead:
-
-```bash
-ls -l /dev/serial/by-id/
-```
-
-This will show you a list of all the connected serial devices with more descriptive name. Look for the one that corresponds to your Aero Hand open. It will look something like:
-```bash
-usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00
-```
-
-Then initialize your hand using that path while running the example code from SDK:
-```python
-from aero_open_sdk.aero_hand import AeroHand
-
-aero_hand = AeroHand(
-  port="/dev/serial/by-id/usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00"
-)
-```
-
-This ensures that connection always points to the correct device, even if you unplug and replug the same Aero Hand Open or change the USB port.
-
-#### Windows
-
-On Windows, the device connected to the USB port will appear as COM port like `COM12` or `COM3`. You can find the correct port by checking the Device Manager under "Ports (COM & LPT)". The device would be listed something like USB Serial Device (COM12).
-
-You can also run the aero-open-gui and refresh the COM port and you can know the COM port, But if you have multiple devices connected, you might need to find the correct COM port. 
-
-You can then Initialize your hand with the detected COM port:
-```python
-from aero_open_sdk.aero_hand import AeroHand
-aero_hand = AeroHand(port="COM3")
-```
-
-**Note:** Since windows does not have a /by-id/ system like Linux, so the COM Number can change if you plug the device in a different USB port but to make it permanent, you can assign a fixed COM Number by following the steps given below:
-1. Plug in the Aero Hand and open Device Manager.
-2. Find it under Ports (COM & LPT).
-3. Right-click → Properties → Port Settings → Advanced.
-4. In COM Port Number, select an unused port (e.g., COM5).
-5. Click OK to save.
-
-You can now always use this COM port when initializing the SDK.
+On Linux, after refreshing, you will find the device path such as `/dev/ttyACM0`, `/dev/ttyACM1`, or `/dev/ttyUSB*` and then connect the hand using the correct port.
 
 ### Homing
 
-We recommend performing the homing procedure using the aero-open-gui. After connecting your hand with the correct serial port, you will see a 'Homing' button on the left side of the GUI. 
-
-For first-time setup, press this button to start homing. Make sure the hand is placed in a stable position and that none of the thumb or finger actuators are obstructed, as this could block their full range of motion. Each actuator will take about 25 seconds to find its mechanical hard stop. Once homing is complete, you will receive an ACK message in the GUI confirming successful completion.
-
-If you want to perform the homing from the SDK , you can run the perform_homing.py under examples folder of SDK.
-
-```python
-from aero_open_sdk.aero_hand import AeroHand
-
-if __name__ == "__main__":
-    hand = AeroHand()
-    hand.send_homing()
-```
-
-**Note:** While homing is being done, the Hand won't respond to any other commands, So we recommend that you dont stop the script. Each actuator is allowed a 25seconds of time to find the mechanical hard stop, so it might take some time for the whole hand to complete the Homing.
-
-If you still feel like the hand was not in a safe position and it was hitting something , you might need to perform homing twice.
-
+Once the hand is connected, you will see a Homing button in the GUI. Press this button to start homing. Make sure the hand is in a safe position with no obstacles in front of it. We recommend running homing if the motion is not as expected. During homing, the hand will not respond to other commands and will need some time to complete the process. When finished, you will receive an ACK in the GUI confirming homing is complete.
 
 ### Slide slider bar for position control
 
@@ -148,8 +75,26 @@ In the GUI, you can control the position of each finger or actuator using the sl
 
 Simply click and drag the slider to your desired value, and the hand will move to that position in real time. This is useful for testing individual finger movements and for manually positioning the hand to some pose of your choice.
 
-
 ## Step 3: Python Control & Examples
+
+Aero Hand connects to the host PC via a USB-C cable. In order to operate the SDK on Windows machine, you must need to specify the correct serial port for your device.
+
+#### Linux
+You can initialize the hand directly if you are running and working only on one hand :
+```python
+from aero_open_sdk.aero_hand import AeroHand
+
+aero_hand = AeroHand()
+```
+#### Windows
+
+On Windows, the device connected to the USB port will appear as COM port like `COM12` or `COM3`. You can find the correct port by checking the Device Manager under "Ports (COM & LPT)". The device would be listed something like USB Serial Device (COM12).
+
+You can then Initialize your hand with the detected COM port:
+```python
+from aero_open_sdk.aero_hand import AeroHand
+aero_hand = AeroHand(port="COM3")
+```
 
 Once you know your device's port from the steps above, you can run any example file from the `sdk/examples` folder to test or control your Aero Hand Open.
 
@@ -215,8 +160,36 @@ On Windows, if you see error like "pip is not recognized", use the `py` launcher
       pip install aero-open-sdk
       aero-open-gui
       ```
+### Troubleshooting Port Issues
 
-### Linux Troubleshooting: Serial Port Permission
+#### Linux
+On your Linux system , your Aero Hand open will show up as a device like `/dev/ttyACM0` or `/dev/ttyUSB0`. You can list down all the ports with :
+
+```bash
+ls /dev/ttyACM* /dev/ttyUSB*
+```
+**Note:** We recommend using a Persistent device path because the device names like `/dev/ttyACM0` can change each time you connect and can also be changed if you have multiple USB serial devices connected to your system. Also this will be helpful if you are working on more than 1 Hand.
+
+To get a persistent name , use the by-id symlink instead:
+
+```bash
+ls -l /dev/serial/by-id/
+```
+
+This will show you a list of all the connected serial devices with more descriptive name. Look for the one that corresponds to your Aero Hand open. It will look something like:
+```bash
+usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00
+```
+
+Then initialize your hand using that path while running the example code from SDK:
+```python
+from aero_open_sdk.aero_hand import AeroHand
+
+aero_hand = AeroHand(
+  port="/dev/serial/by-id/usb-Espressif_USB_JTAG_serial_debug_unit_D8:3B:DA:45:C8:1C-if00"
+)
+```
+This ensures that connection always points to the correct device, even if you unplug and replug the same Aero Hand Open or change the USB port.
 
 If you see a permission error when connecting to the serial port (e.g., `/dev/ttyACM0`), do the following:
 
@@ -244,6 +217,19 @@ You may need to temporarily set permissions:
 ```sh
 sudo chmod 666 /dev/ttyACM0
 ```
+
+#### Windows
+
+Since windows does not have a /by-id/ system like Linux, so the COM Number can change if you plug the device in a different USB port but to make it permanent, you can assign a fixed COM Number by following the steps given below:
+1. Unplug all the serial devices connected to USB port.
+2. Plug in the Aero Hand and open Device Manager.
+3. Find it under Ports (COM & LPT).
+4. Right-click → Properties → Port Settings → Advanced.
+5. In COM Port Number, select an unused port (e.g., COM5).
+6. Click OK to save.
+
+You can now always use this COM port when initializing the SDK.
+
 
 <div align="center">
 
