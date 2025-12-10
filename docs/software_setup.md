@@ -79,6 +79,8 @@ Simply click and drag the slider to your desired value, and the hand will move t
 
 Aero Hand connects to the host PC via a USB-C cable. In order to operate the SDK on Windows machine, you must need to specify the correct serial port for your device.
 
+### Find port
+
 #### Linux
 You can initialize the hand directly if you are running and working only on one hand :
 ```python
