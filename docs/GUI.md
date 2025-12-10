@@ -15,7 +15,7 @@ Follow instructions in [software_setup](./software_setup.md)
 
 ### Action Buttons (left→right)
 
-* **Homing**: Sends opcode `0x01` to run the on‑board homing routine.Any Other Input is ignored while homing is active; wait for ACK under a given timeout of 3minutes.
+* **Homing**: Sends opcode `0x01` to run the on‑board homing routine. Any Other Input is ignored while homing is active; wait for ACK under a given timeout of 3 minutes.
 * **Set ID**: Guided flow to set a servo's bus ID. Requires a **single** servo connected; the firmware verifies this before writing.
 * **Trim Servo**: Fine‑tune alignment per channel. Enter **channel (0–6)** and **degrees offset** (±). The firmware adjusts/persists the channel's `extend_count` in NVS so it survives reboots. Use small steps (±5–10°) and test.
 * **Upload Firmware**: Flash a `.bin` directly from the GUI. After selection, the board is reset into bootloader, the image is written, and the device restarts.
