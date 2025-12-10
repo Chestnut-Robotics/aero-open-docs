@@ -37,7 +37,7 @@ python -m pip install aero-open-sdk
 
 ---
 
-## Step2: GUI — Aero Hand Open Control App
+## Step 2: GUI — Aero Hand Open Control App
 
 Launch the GUI from a terminal after installation:
 
@@ -59,7 +59,7 @@ python -m aero_open_sdk
 
 ### Find port
 
-Aero Hand connects to the host PC via a USB-C cable. In order to operate the SDK on Windoes machine, you must need to specify the correct serial port for your device.
+Aero Hand connects to the host PC via a USB-C cable. In order to operate the SDK on Windows machine, you must need to specify the correct serial port for your device.
 
 #### Linux
 You can initialize the hand directly if you are running and working only on one hand :
@@ -74,7 +74,7 @@ On your Linux system , your Aero Hand open will show up as a device like `/dev/t
 ```bash
 ls /dev/ttyACM* /dev/ttyUSB*
 ```
-**Note:** We recommend using a Persistent device path because the device names like `/dev/ttyACM0` can chang each time you connect and can also be changed if you have multiple USB serial devices connected to your system. Also this will be helpful if you are working on more than 1 Hand.
+**Note:** We recommend using a Persistent device path because the device names like `/dev/ttyACM0` can change each time you connect and can also be changed if you have multiple USB serial devices connected to your system. Also this will be helpful if you are working on more than 1 Hand.
 
 To get a persistent name , use the by-id symlink instead:
 
@@ -96,11 +96,11 @@ aero_hand = AeroHand(
 )
 ```
 
-This ensures that connection always poins to the correct device, even if you unplug and replug the same Aero Hand Open or change the USB port.
+This ensures that connection always points to the correct device, even if you unplug and replug the same Aero Hand Open or change the USB port.
 
 #### Windows
 
-On Windows, the device connected to the USB port will aprear as COM port like `COM12` or `COM3`. You can find the correct port by checking the Device Manager under "Ports (COM & LPT)". The device would be listed something like USB Serial Device (COM12).
+On Windows, the device connected to the USB port will appear as COM port like `COM12` or `COM3`. You can find the correct port by checking the Device Manager under "Ports (COM & LPT)". The device would be listed something like USB Serial Device (COM12).
 
 You can also run the aero-open-gui and refresh the COM port and you can know the COM port, But if you have multiple devices connected, you might need to find the correct COM port. 
 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     hand.send_homing()
 ```
 
-**Note:** While homing is being done, the Hand wont respond to any other commands, So we recommend that you dont stop the script . Each actuator is allowed a 25seconds of time to find the mechanical hard stop, so it might take some time for the whole hand to complete the Homing.
+**Note:** While homing is being done, the Hand won't respond to any other commands, So we recommend that you dont stop the script. Each actuator is allowed a 25seconds of time to find the mechanical hard stop, so it might take some time for the whole hand to complete the Homing.
 
 If you still feel like the hand was not in a safe position and it was hitting something , you might need to perform homing twice.
 
@@ -169,7 +169,7 @@ You can also change the open_pose and grip_pose to any pose that you want to go 
 
 
 #### Explore more examples
-More examples are avaiable at the [sdk folder](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
+More examples are available at the [sdk folder](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
 
 
 ## Troubleshooting
