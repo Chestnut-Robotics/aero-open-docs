@@ -235,7 +235,7 @@ You can now always use this COM port when initializing the SDK.
 
 If the cable gets slack or loose during operation and you reconnect it, but the hand's motion is not correct, try performing the homing procedure again. Make sure to place the hand in a safe pose with no obstacles in front, as shown in the image below, before starting homing.
 
-![Homing Pose](./imgs/homing_pose.png)
+![Homing Pose](imgs/homing_pose.png)
 
 
 <div align="center">
