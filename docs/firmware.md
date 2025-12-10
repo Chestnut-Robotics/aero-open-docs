@@ -4,7 +4,7 @@ This guide covers architecture, build options, and a detailed communication prot
 
 ---
 
-## 🧭 Overview
+## Overview
 
 The firmware exposes a compact **fixed 16‑byte binary serial protocol** for commanding seven actuators (thumb & fingers) and for querying telemetry (position, velocity, current, temperature). It also implements **homing**, **set-id**, **persistent trims**, and safety behaviors on‑board, so a host PC can remain simple.
 
@@ -20,7 +20,7 @@ The firmware exposes a compact **fixed 16‑byte binary serial protocol** for co
 
 ---
 
-## 🧰 Hardware & Software Requirements
+## Hardware & Software Requirements
 
 * **MCU:** Seeed Studio XIAO ESP32‑S3 (8 MB flash recommended)
 * **Servos:** Feetech HLS/SC family (e.g., HLS3606M), IDs mapped to 7 actuators
@@ -29,7 +29,7 @@ The firmware exposes a compact **fixed 16‑byte binary serial protocol** for co
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 1. **Select the hand** (left/right) in `HandConfig.h` or via a build flag (see below).
 2. **Build & flash:**
@@ -39,7 +39,7 @@ The firmware exposes a compact **fixed 16‑byte binary serial protocol** for co
 
 ---
 
-## 📁 Repository Layout
+## Repository Layout
 
 ```
 /firmware
@@ -52,7 +52,7 @@ The firmware exposes a compact **fixed 16‑byte binary serial protocol** for co
 
 ---
 
-## 🔁 Build Configuration: Left vs Right Hand
+## Build Configuration: Left vs Right Hand
 
 You can switch hands either by editing `HandConfig.h` **or** using build flags.
 
@@ -72,7 +72,7 @@ You can switch hands either by editing `HandConfig.h` **or** using build flags.
 
 ---
 
-## 🔌 Communication Protocol
+## Communication Protocol
 
 The protocol is **always 16 bytes** per frame, both **to** and **from** the device. Payload words are **little‑endian**.
 
@@ -126,7 +126,7 @@ For each channel, the firmware maps the incoming torque value in the range 0..10
 
 ---
 
-## 🧱 Firmware Architecture
+## Firmware Architecture
 
 ### Data Structures
 
@@ -154,7 +154,7 @@ struct ServoData {              // one per channel
 
 ---
 
-## 🧰 Homing Behavior
+## Homing Behavior
 
 1. Load the appropriate baseline via `resetSdToBaseline()`.
 2. For each servo, drive slowly toward a mechanical stop while monitoring current to detect contact.
@@ -164,7 +164,7 @@ struct ServoData {              // one per channel
 
 ---
 
-## 🧩 Extending the Firmware (Add a New Command)
+## Extending the Firmware (Add a New Command)
 
 Follow this pattern to add features like LED blink, torque enable, or special saves.
 
@@ -203,7 +203,7 @@ Extend your Python SDK/GUI (e.g., `aero_hand.py`) to emit and consume the new op
 
 ---
 
-## 🔐 Safety & Best Practices
+## Safety & Best Practices
 
 * Start with conservative speeds/torque when testing.
 * Ensure the servo supply can deliver peak current without large drops.
@@ -213,7 +213,7 @@ Extend your Python SDK/GUI (e.g., `aero_hand.py`) to emit and consume the new op
 
 ---
 
-## 🧯 Troubleshooting
+## Troubleshooting
 
 * **Wrong hand geometry:** Verify build flag (`-DLEFT_HAND` vs `-DRIGHT_HAND`).
 * **Servos move opposite:** Check `servo_direction` or swap extend/grasp counts. We recommend not to change the servo_direction , extend_count can be changed by Trim Servo.
@@ -222,12 +222,12 @@ Extend your Python SDK/GUI (e.g., `aero_hand.py`) to emit and consume the new op
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under **Apache License‑2.0** 
 
 ---
-## 🤝 Contribution
+## Contribution
 
 We welcome community contributions!
 
@@ -242,7 +242,7 @@ If you would like to improve the [Firmware](https://github.com/TetherIA/aero-han
 
 ---
 
-## 🤝 Support & Contact
+## Support & Contact
 
 * Open a GitHub Issue on the project repository
 * Email: **[contact@tetheria.ai](mailto:contact@tetheria.ai)**
