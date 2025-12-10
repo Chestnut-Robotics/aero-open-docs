@@ -63,6 +63,7 @@ const sidebars = {
         'mechanical_overview',
         'pcb',
         'mechanical',
+        'hardware_faq',
       ],
     },
   ],
