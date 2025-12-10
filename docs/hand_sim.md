@@ -9,7 +9,7 @@ The hand can be simulated across multiple physics platforms. Currently, it suppo
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 If you’d like to **train your own policy**, follow these steps:
 
@@ -150,7 +150,7 @@ This will:
 
 ---
 
-## 🧩 Acknowledgements
+## Acknowledgements
 
 Dependency:  
 - [**MuJoCo Playground**](https://github.com/google-deepmind/mujoco_playground). 
