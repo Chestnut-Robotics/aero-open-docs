@@ -100,15 +100,15 @@ Once you know your device's port from the steps above, you can run any example f
 
 ### Run examples
 
-#### run_sequence
+#### [run_sequence](https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/run_sequence.py)
 
-If homing is completed properly and the hand is in a safe position, running the `run_sequence.py` example will move your hand through a series of poses: open palm, pinch each finger one by one, open palm, peace sign, open palm, rockstar sign, and back to open palm. 
+If homing is completed properly and the hand is in a safe position, running the [`run_sequence.py`](https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/run_sequence.py) example will move your hand through a series of poses: open palm, pinch each finger one by one, open palm, peace sign, open palm, rockstar sign, and back to open palm. 
 
 You can also create any custom trajectory you want and use `hand.run_trajectory` to execute it.
 
-#### power_grasp
+#### [power_grasp](https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/power_grasp.py)
 
-When you run the `power_grasp.py` example, you can use the SPACEBAR on your keyboard to toggle the hand between open and closed grip poses. This allows you to quickly switch the hand's state for testing or demonstration purposes.
+When you run the [`power_grasp.py`]((https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/power_grasp.py)) example, you can use the SPACEBAR on your keyboard to toggle the hand between open and closed grip poses. This allows you to quickly switch the hand's state for testing or demonstration purposes.
 
 You can also change the open_pose and grip_pose to any pose that you want to go and then call the hand.set_joint_positions. Make sure to check the joint constants in the SDK, as your input values must be within the supported range for each joint else the inputs will be clipped to the upper and lower limit range.
 
