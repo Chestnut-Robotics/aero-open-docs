@@ -1,5 +1,5 @@
 # Software Setup
-## Step1: Installation
+## Step 1: Installation
 
 The SDK is currently tested for Python 3.10 and above.
 
