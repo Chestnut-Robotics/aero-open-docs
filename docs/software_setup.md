@@ -110,7 +110,7 @@ You can also create any custom trajectory you want and use `hand.run_trajectory`
 
 #### [power_grasp](https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/power_grasp.py)
 
-When you run the [`power_grasp.py`]((https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/power_grasp.py)) example, you can use the SPACEBAR on your keyboard to toggle the hand between open and closed grip poses. This allows you to quickly switch the hand's state for testing or demonstration purposes.
+When you run the [`power_grasp.py`](https://github.com/TetherIA/aero-hand-open/blob/main/sdk/examples/power_grasp.py) example, you can use the SPACEBAR on your keyboard to toggle the hand between open and closed grip poses. This allows you to quickly switch the hand's state for testing or demonstration purposes.
 
 You can also change the open_pose and grip_pose to any pose that you want to go and then call the hand.set_joint_positions. Make sure to check the joint constants in the SDK, as your input values must be within the supported range for each joint else the inputs will be clipped to the upper and lower limit range.
 
