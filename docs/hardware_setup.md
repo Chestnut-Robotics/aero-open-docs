@@ -1,50 +1,53 @@
 # Hardware Setup
 
-This page contains the complete hardware setup connections guide for the Aero Hand.
+import cableConnection from './hardware_setup_assets/cable_connection.jpg';
+import setupImage from './hardware_setup_assets/setupimage.png';
+import powerConnection from './hardware_setup_assets/powerconnection.png';
+import finishedSetup from './hardware_setup_assets/finishedsetup.png';
+import finishedSetup2 from './hardware_setup_assets/finishedsetup2.png';
+import finishedSetup3 from './hardware_setup_assets/finishedsetup3.png';
 
-### 🚀 **Option 1 (RECOMMENDED) - Plug & Play Solution**
-> **⭐ EASIEST & FASTEST WAY TO GET STARTED**
+This page covers everything you need to wire and power the Aero Hand Open.
 
-**Buy our custom PCBs** (described above) from our [website](https://shop.tetheria.ai/products/pcbs) for a **plug-and-play solution**. 
+### **Option 1 (Recommended)**
 
-✅ **Benefits:**
-- **Zero soldering required** - just plug and play
-- **Professional quality** - tested and verified PCBs
-- **Self-explanatory connections** - cable connections are straightforward
-- **Maximum reliability** - optimized for all motor currents
-- **Time-saving** - get your hand running in minutes, not hours
+If you purchase the pre-assembled hand, choose this option—no extra parts required.
 
-🔗 **[Order PCBs Now →](https://shop.tetheria.ai/products/pcbs)**
+If you assembled the hand yourself, we strongly recommend using our PCBs and power supply for the fastest, most reliable setup: [Order PCBs](https://shop.tetheria.ai/products/pcbs) · [Order Power Supply](https://shop.tetheria.ai/products/10a-6vdc-power-supply)
 
-### Option 2
-If you prefer to manufacture and solder the PCBs yourself, all files and resources for self-manufacturing are provided in the [PCB](<https://github.com/TetherIA/aero-hand-open/tree/main/hardware/PCB>) folder.
+<img src={cableConnection} alt="Complete wiring with Aero PCBs" width="40%" />
 
-### Option 3 
-Use off-the-shelf protoboard and connectors (Molex 3-pin, JST) to manually wire and control the servos. This method requires careful soldering and wire management, and may not support maximum current for all motors. You will need:
+If you bought everything from us, you can skip the rest of the page.
+
+### Option 2 (For advanced DIY)
+Prefer to manufacture and solder the PCBs yourself? All fabrication files are in the [PCB](https://github.com/TetherIA/aero-hand-open/tree/main/hardware/PCB) folder.
+
+### Option 3 (For hardcore DIY)
+Hand-wire everything using protoboard and connectors (Molex 3‑pin, JST). This requires careful soldering and may not support peak current for all motors. You will need:
 - Protoboard
 - Molex 3-pin connectors (for servos)
 - JST connectors
 - Servo cables
 - Soldering tools
 
-Once you have everything , You can refer to our guide under **Hardware Setup Guide** folder . Or you can also take a look at the next steps.
+Once you have all parts, follow the quick-start below (full details are in the **Hardware Setup Guide** folder).
 
-Step 1: Solder Pin Headers to ESP and do connections to TTLinker Mini Board.
-![Setup Image](./hardware_setup_assets/setupimage.png)
+1. Solder pin headers to the ESP and connect to the TTLinker Mini Board.
+   <img src={setupImage} alt="ESP to TTLinker Mini Board wiring" width="70%" />
 
-Step2: Connect 6V 10A regulated power supply like below image
-![Power Setup](./hardware_setup_assets/powerconnection.png)
+2. Connect the regulated 6V 10A power supply.
+   <img src={powerConnection} alt="6V 10A power supply wiring" width="70%" />
 
-Step3: Once your setup is ready, It will look something like this.
-![Finished setup1](./hardware_setup_assets/finishedsetup.png)
+3. Verify the final layout looks similar to this.
+   <img src={finishedSetup} alt="Finished wiring layout example 1" width="70%" />
 
 **OR** if you want to do soldered connections on a board directly instead of using a protoboard, then your connections will look like this.
 
-![Finished Setup2](./hardware_setup_assets/finishedsetup2.png)
+<img src={finishedSetup2} alt="Finished wiring layout example 2" width="70%" />
 
 **OR** it will looks like this, depending on how you soldered it.
 
-![Finished Setup3](./hardware_setup_assets/finishedsetup3.png)
+<img src={finishedSetup3} alt="Finished wiring layout example 3" width="70%" />
 
 
 :::tip

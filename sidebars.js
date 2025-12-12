@@ -17,17 +17,55 @@
 const sidebars = {
   // Manual sidebar configuration to control page order
   tutorialSidebar: [
-    'intro',                    // Introduction page
-    'assembly',                 // Assembly Instructions
-    'hardware_setup',           // Hardware setup
-    'getting_started',          // Getting Started guide
-    'sdk',                      // SDK documentation
-    'ros2',                     // ROS2 documentation
-    'hand_sim',                 // Hand simulation
-    'mechanical_overview',      // Mechanical overview documentation
-    'pcb',                      // PCB documentation
-    'firmware',                 // Firmware documentation
-    'mechanical',               // Mechanical documentation
+    'intro', // Introduction page
+    {
+      type: 'category',
+      label: 'Quick Start',
+      link: {
+        type: 'generated-index',
+        title: 'Quick Start',
+        description: 'Assembly, hardware setup, and first use.',
+      },
+      collapsed: false,
+      items: [
+        'assembly',
+        'hardware_setup',
+        'software_setup',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced Topics',
+      link: {
+        type: 'generated-index',
+        title: 'Advanced Topics',
+        description: 'SDK usage, ROS 2 integration, and simulation.',
+      },
+      collapsed: false,
+      items: [
+        'firmware',
+        'GUI',
+        'sdk',
+        'ros2',
+        'hand_sim',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Hardware Reference',
+      link: {
+        type: 'generated-index',
+        title: 'Hardware Reference',
+        description: 'Mechanical overview and PCB details.',
+      },
+      collapsed: false,
+      items: [
+        'mechanical_overview',
+        'pcb',
+        'mechanical',
+        'hardware_faq',
+      ],
+    },
   ],
 };
 

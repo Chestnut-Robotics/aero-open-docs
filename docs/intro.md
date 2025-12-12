@@ -75,18 +75,22 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 | Firmware | [`firmware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) | Embedded control software |
 | SDK / GUI | [`sdk folder`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) | Python SDK and GUI |
 | ROS2 | [`ros2 folder`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) | ROS2 packages for URDF, TeleOp, RL policy deployment, etc. |
-| Documentation | [`docs folder`](https://github.com/TetherIA/aero-hand-open/tree/main/docs) | Documentation source |
 
 ---
 
 ## Getting Started
 
-- [Build and assemble the hand →](./assembly.md)  
-- [Set up hardware→](./hardware_setup.md) 
-- [Flash and verify firmware →](./getting_started.md) 
-- [Getting Started with GUI or SDK →](./sdk.md)   
-- [Run simulation in MuJoCo →](./hand_sim.md)
-- [Understand and modify firmware →](./firmware.md)
+- **Quick Start**
+  - [Build and assemble the hand →](./assembly.md)  
+  - [Wire power and electronics →](./hardware_setup.md) 
+  - [Install SDK/GUI and flash firmware →](./software_setup.md) 
+- **Control & Integration**
+  - [Control with the Python SDK or GUI →](./sdk.md)   
+  - [Integrate with ROS 2 →](./ros2.md)
+  - [Run simulation in MuJoCo →](./hand_sim.md)
+- **Deep Dive**
+  - [Understand and modify firmware →](./firmware.md)
+  - [Mechanical overview →](./mechanical_overview.md)
 
 ---
 

@@ -4,64 +4,16 @@ After [assembling your hand](/docs/mechanical.md) and setting up the actuators (
 
 ---
 
-## ⚙️ Installation
+## Installation
 
-The SDK is currently tested for Python 3.10 and supports Linux and Windows.
-
-### 📦 Install via pip
-
-```bash
-pip install aero-open-sdk
-```
-
-### 🧩 Install from source (editable mode)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/TetherIA/aero-hand-open.git
-   ```
-
-2. Navigate to the cloned repository:
-   ```bash
-   cd sdk
-   ```
-
-3. Install the package in editable mode:
-   ```bash
-   pip3 install -e .
-   ```
-
----
-
-## 🖥️ GUI
-When setting up your hand for the first time, the **setup GUI** helps you configure actuator IDs and test the connections.
-Make sure you've installed the SDK before running the below command [(see Installation)](#️-installation)
-
-Run the GUI with:
-
-```bash
-aero-open-gui
-```
-
-You’ll see an interactive configuration interface similar to below:
-
-![GUI Screen](/img/gui-screen.png)
-
-<!-- @Harsh-Panara Add more details on the GUI usage and first time setup here.\ -->
-
-### 🪛 First-Time Setup
-
-For a complete First-Time guide, see [Getting Started](./getting_started.md).
-1. Assigning Actuator IDs
-2. Testing Actuator Connections
-3. Performing Initial Homing and Calibration
+Follow the guideline in [software_setup](./software_setup.md)
 
 
-## 🧰 SDK Overview
+## SDK Overview
 
 The SDK exposes a high-level Python API for commanding, monitoring, and debugging the hand.
 
-### 🔌 Initialization
+### Initialization
 
 You can intialize the hand using the `AeroHand` class:
 
@@ -79,11 +31,11 @@ Always verify the correct port before initializing the hand.
 For detailed steps on identifying and configuring serial ports, refer to our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk).
 :::
 
-### ✋ Joint Representation
+### Joint Representation
 
 Our Robot Hand has 16 Joints - 4 For the Thumb and 3 for each of the four finger.
 
-#### 🧾 Joint Naming and Indexing Convention
+#### Joint Naming and Indexing Convention
 
 We use the following joint naming and indexing convention to refer to each joint in the software. The naming follows standard anatomical terminology, and the indexing flows:
  - From thumb to pinky finger
@@ -118,7 +70,7 @@ Expected output:
 ['thumb_cmc_abd', 'thumb_cmc_flex', 'thumb_mcp', 'thumb_ip', 'index_mcp', 'index_pip', 'index_dip', 'middle_mcp', 'middle_pip', 'middle_dip', 'ring_mcp', 'ring_pip', 'ring_dip', 'pinky_mcp', 'pinky_pip', 'pinky_dip']
 ```
 
-#### 📏 Joint Limits
+#### Joint Limits
 
 Each joint has a specific range of motion defined by its lower and upper limits.
 
@@ -167,7 +119,7 @@ print(aero_hand.joint_lower_limits)
 print(aero_hand.joint_upper_limits)
 ```
 
-### 🎮 Controlling the Hand
+### Controlling the Hand
 
 To control the hand, api expose `set_joint_positions` method which takes in a list of 16 joint angles in degrees and moves the hand correspondingly.
 
@@ -181,7 +133,7 @@ target_positions = [30.0, 20.0, 45.0, 45.0, 90.0, 90.0, 90.0, 90.0, 90.0, 90.0, 
 aero_hand.set_joint_positions(target_positions)
 ```
 
-### 🔗 Joints to Actuations Mapping
+### Joints to Actuations Mapping
 The hand uses 7 actuators to drive 16 joints through a tendon-driven mechanism, resulting in an under-actuated system where multiple joints are coupled.
 While we can only control 7 actuators in the hand, we found it useful to think in terms of 16 independent joint angles as many teleoprations systems are designed to work with joints angles. Also, actuators in the thumb are coupled in the sense that movement of one joint affects multiple actuators to maintain the other joint positions.
 
@@ -241,7 +193,7 @@ aero_hand.set_joint_positions(compact_target_positions)
 :::
 
 
-### 🔧 Actuation Position Control (Advanced)
+### Actuation Position Control (Advanced)
 
 While we recommend using the `set_joint_positions` method to control the hand, we also provide the `set_actuations` method for advanced users who need actuator-level control.  
 
@@ -354,7 +306,7 @@ current_actuation_speeds = aero_hand.get_actuator_speeds()
 This will return a list of 7 actuation speeds in rpm.
 
 
-### 💡 Examples
+### Examples
 
 To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
 
