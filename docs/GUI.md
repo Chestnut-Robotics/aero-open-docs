@@ -47,9 +47,6 @@ Each row controls a single actuator channel with a **normalized slider**:
 ### Uploading Firmware
 
 
-TODO(harsh): add a screenshot about how to use GUI to upload firmware
-
-
 
 To upload firmware to your Aero Hand device:
 
