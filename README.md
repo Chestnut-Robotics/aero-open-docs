@@ -193,3 +193,5 @@ Check Netlify preview → confirm
      ↓
 Merge → site updates live
 ```
+
+---
