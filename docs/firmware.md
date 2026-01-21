@@ -43,7 +43,7 @@ The firmware exposes a compact **fixed 16‑byte binary serial protocol** for co
 
 ```
 /firmware
-  ├─ firmware_v0.1.0.ino         # Main sketch: init, parser, handlers, tasks
+  ├─ firmware.ino         # Main sketch: init, parser, handlers, tasks
   ├─ HandConfig.h                # LEFT_HAND / RIGHT_HAND selection
   ├─ Homing.h                    # Homing API + ServoData type
   ├─ Homing.cpp                  # Homing implementation + baselines
