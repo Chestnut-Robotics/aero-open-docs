@@ -29,18 +29,18 @@ Motor overheating occurs **only under specific operating conditions** and is han
 
 Based on internal testing under **continuous stall conditions**:
 - **Torque = 1000** → ~20 seconds to reach 80 °C
-- **Torque = 700 (default)** → ~2–3 minutes
-- **Torque = 500** → more than 15 minutes
+- **Torque = 700 (default)** → ~2 minutes
+- **Torque = 500** → more than 10 minutes
 
 
 These durations apply **only** when the hand is holding an object at full force without motion.
 
 ### Active temperature protection (firmware-level prevention mechanism)
 
-- To prevent the motors from reaching the critical temperature limit, the firmware automatically intervenes when the motor temperature reaches **50 °C.**
-- At this point, the **maximum allowable torque is reduced from 1000 to 200.**
-- The motors continue to accept normal **position, speed, and torque commands;** however, the effective torque output during execution is capped at 200 to limit further heat buildup.
-- This prevention mechanism is implemented at the **firmware level** starting from **version v0.1.2** and onwards, and can be modified by users as needed.
+- To prevent the motors from reaching the critical temperature limit, the firmware automatically intervenes when the motor temperature reaches **70 °C.**
+- At this point, the **maximum allowable torque is reduced from 1000 to 500.**
+- The motors continue to accept normal **position, speed, and torque commands;** however, the effective torque output during execution is capped at 500 to limit further heat buildup.
+- This prevention mechanism is implemented at the **firmware level** starting from **version v0.1.4** and onwards, and can be modified by users as needed.
 
 ### Torque range and recommended settings
 
