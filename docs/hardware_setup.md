@@ -20,7 +20,7 @@ If you assembled the hand yourself, we strongly recommend using our PCBs and pow
 If you bought everything from us, you can skip the rest of the page.
 
 ### Option 2 (For advanced DIY)
-Prefer to manufacture and solder the PCBs yourself? All fabrication files are in the [PCB](https://github.com/TetherIA/aero-hand-open/tree/main/hardware/PCB) folder.
+Prefer to manufacture and solder the PCBs yourself? All fabrication files are in the [PCB](https://github.com/chestnut-robotics/aero-hand-open/tree/main/hardware/PCB) folder.
 
 ### Option 3 (For hardcore DIY)
 Hand-wire everything using protoboard and connectors (Molex 3‑pin, JST). This requires careful soldering and may not support peak current for all motors. You will need:
@@ -56,6 +56,6 @@ If you have any questions, please reach out to our community on [Discord](https:
 
 <div align="center">
 
-Made with ❤️ by **TetherIA Robotics**
+Made with ❤️ by **Chestnut Robotics**
 
 </div>

@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Aero Hand',  
   tagline: 'Empowering Physical AI with the Best Dexterous Hands',
-  favicon: 'img/Logo.png',
+  favicon: 'img/favicon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -27,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'TetherIA', // Usually your GitHub org/user name.
-  projectName: 'aero-hand', // Usually your repo name.
+  organizationName: 'chestnut-robotics', // Usually your GitHub org/user name.
+  projectName: 'aero-open-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -51,7 +51,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/TetherIA/open-hand-doc',
+            'https://github.com/chestnut-robotics/aero-open-docs/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +62,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/TetherIA/open-hand-doc',
+            'https://github.com/chestnut-robotics/aero-open-docs/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -79,7 +79,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/Logo.png',
+      image: 'img/social-card.png',
       algolia: {
         appId: '2S8W7KORIR',
         apiKey: '303872aa28d220970de83fdd162da887',
@@ -89,7 +89,7 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'TetherIA Logo',
+          alt: 'Chestnut Robotics Logo',
           src: 'img/Logo.png',
         },
         items: [
@@ -125,7 +125,7 @@ const config = {
               },
               {
                 label: 'Aero Hand Open',
-                href: 'https://tetheria.github.io/aero-hand-open/',
+                href: 'https://chestnut-robotics.github.io/aero-hand-open/',
               },
             ],
           },
@@ -159,7 +159,7 @@ const config = {
               // },
               {
                 label: 'Homepage',
-                href: 'https://tetheria.ai/',
+                href: 'https://chestnut.bot/',
               },
               {
                 label: 'Shop',
@@ -167,12 +167,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/TetherIA',
+                href: 'https://github.com/chestnut-robotics',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} TetherIA`,
+        copyright: `Copyright © ${new Date().getFullYear()} Chestnut Robotics, Inc. (formerly TetherIA)`,
       },
       prism: {
         theme: prismThemes.github,

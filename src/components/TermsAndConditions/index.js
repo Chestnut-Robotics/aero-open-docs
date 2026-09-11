@@ -35,7 +35,7 @@ export function TermsAndConditionsModal({ isOpen, onAgree, onClose }) {
         <div className={styles.modalBody}>
           <h3>End User License Agreement (EULA)</h3>
           <p>
-            This End User License Agreement ("Agreement") governs the use of physical products and digital design files or assembly manual files provided by Aero Hand (www.tetheria.ai). By downloading digital design files or assembly manual files or purchasing an Aero Hand product, you agree to the terms below.
+            This End User License Agreement ("Agreement") governs the use of physical products and digital design files or assembly manual files provided by Aero Hand (www.chestnut.bot). By downloading digital design files or assembly manual files or purchasing an Aero Hand product, you agree to the terms below.
           </p>
 
           <h4>1. CAD File Usage (BY-NC-SA License)</h4>
@@ -54,7 +54,7 @@ export function TermsAndConditionsModal({ isOpen, onAgree, onClose }) {
             <li>Reverse engineer or exploit the files for commercial benefit</li>
           </ul>
           <p>
-            Any commercial use or deviation from this license requires prior written consent. Contact contact@tetheria.ai to negotiate a custom license.
+            Any commercial use or deviation from this license requires prior written consent. Contact contact@chestnut.bot to negotiate a custom license.
           </p>
 
           <h4>2. Product Purchase License</h4>
@@ -76,7 +76,7 @@ export function TermsAndConditionsModal({ isOpen, onAgree, onClose }) {
 
           <h4>4. Custom Licensing Requests</h4>
           <p>
-            If you wish to use the digital design files or assembly manual files or derivatives for commercial purposes, or distribute them under different terms, you must obtain explicit written permission. Please contact contact@tetheria.ai to request a custom license agreement.
+            If you wish to use the digital design files or assembly manual files or derivatives for commercial purposes, or distribute them under different terms, you must obtain explicit written permission. Please contact contact@chestnut.bot to request a custom license agreement.
           </p>
 
           <h4>5. Acceptance Upon Purchase</h4>

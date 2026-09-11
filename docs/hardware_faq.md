@@ -48,5 +48,5 @@ These durations apply **only** when the hand is holding an object at full force 
 - The firmware default torque value is **700,** which provides a good balance between grasp strength, thermal stability, and continuous operation time.
 - We recommend using the default torque value of **700** for most applications to reduce the likelihood of temperature-related interruptions while maintaining strong grasp performance.
 - Motor torque can be controlled via the SDK in both **position control mode** and **torque control mode.** For examples, see:
-https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples
+https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk/examples
 - Advanced users may freely adjust the default torque value and firmware-level temperature protection, with the understanding that doing so increases the risk of motor overheating.

@@ -1,6 +1,6 @@
 # Mechanical Overview
 
-![Aero Hand Open – front view](https://raw.githubusercontent.com/TetherIA/aero-hand-open/main/assets/overview1.png)
+![Aero Hand Open – front view](https://raw.githubusercontent.com/chestnut-robotics/aero-hand-open/main/assets/overview1.png)
 
 Aero Hand Open is a compact, anthropomorphic five‑finger robotic hand designed to be easy to mount, wire, and control.
 
@@ -34,9 +34,9 @@ Both versions share the same mechanical specs and control API.
 
 ### Additional views
 
-![Aero Hand – angled view](https://raw.githubusercontent.com/TetherIA/aero-hand-open/main/assets/overview2.png)
-![Aero Hand – palm view](https://raw.githubusercontent.com/TetherIA/aero-hand-open/main/assets/overview3.png)
-![Aero Hand – side view](https://raw.githubusercontent.com/TetherIA/aero-hand-open/main/assets/overview4.png)
+![Aero Hand – angled view](https://raw.githubusercontent.com/chestnut-robotics/aero-hand-open/main/assets/overview2.png)
+![Aero Hand – palm view](https://raw.githubusercontent.com/chestnut-robotics/aero-hand-open/main/assets/overview3.png)
+![Aero Hand – side view](https://raw.githubusercontent.com/chestnut-robotics/aero-hand-open/main/assets/overview4.png)
 
 ---
 

@@ -1,6 +1,6 @@
 # Open Hand Documentation
 
-This repository contains the source code for the TetherIA Open Hand documentation website, built with [Docusaurus](https://docusaurus.io/) and deployed automatically with [Netlify](https://netlify.com/).
+This repository contains the source code for the Aero Hand Open documentation website (Chestnut Robotics, formerly TetherIA), built with [Docusaurus](https://docusaurus.io/) and deployed automatically with [Netlify](https://netlify.com/).
 
 The site is live at: **[https://docs.tetheria.ai](https://docs.tetheria.ai)**
 
@@ -44,8 +44,8 @@ npm -v
 Clone the repo and install:
 
 ```bash
-git clone https://github.com/TetherIA/open-hand-doc.git
-cd open-hand-doc
+git clone https://github.com/chestnut-robotics/aero-open-docs.git
+cd aero-open-docs
 npm install
 ```
 
@@ -76,7 +76,7 @@ Most edits are just Markdown files inside the `docs/` folder.
 ### 📂 Folder Structure
 
 ```
-open-hand-doc/
+aero-open-docs/
 ├── docs/            ← main documentation files
 │   ├── intro.md
 │   ├── usage.md
