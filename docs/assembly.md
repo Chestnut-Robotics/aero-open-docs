@@ -26,6 +26,6 @@ If you have any questions during assembly, please reach out to our community on 
 
 <div align="center">
 
-Made with ❤️ by **TetherIA Robotics**
+Made with ❤️ by **Chestnut Robotics**
 
 </div>

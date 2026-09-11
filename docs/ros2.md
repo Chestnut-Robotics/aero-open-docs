@@ -18,7 +18,7 @@ The ROS 2 stack for **Aero Hand Open** provides:
 - common message definitions shared across sim and real,
 - and a ready-to-run RL policy deployment node.
 
-All components live under the repo’s [`ros2/`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) directory and use a single message interface for clean sim-to-real handoffs.
+All components live under the repo’s [`ros2/`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/ros2) directory and use a single message interface for clean sim-to-real handoffs.
 
 ---
 
@@ -34,10 +34,10 @@ aero-hand-open/
       └─ aero_hand_open_rl/       # RL policy deployment
 ```
 
-- Hardware node: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py)
-- Teleop: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop)
-- Messages: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
-- RL deploy: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
+- Hardware node: [github.com/chestnut-robotics/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py](https://github.com/chestnut-robotics/aero-hand-open/blob/main/ros2/src/aero_hand_open/aero_hand_open/aero_hand_node.py)
+- Teleop: [github.com/chestnut-robotics/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop](https://github.com/chestnut-robotics/aero-hand-open/tree/main/ros2/src/aero_hand_open_teleop/aero_hand_open_teleop)
+- Messages: [github.com/chestnut-robotics/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/chestnut-robotics/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
+- RL deploy: [github.com/chestnut-robotics/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/chestnut-robotics/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
 
 ---
 
@@ -47,7 +47,7 @@ aero-hand-open/
 
 ```bash
 # In your ROS 2 workspace (e.g., ~/aero_ws/src)
-git clone https://github.com/TetherIA/aero-hand-open.git
+git clone https://github.com/chestnut-robotics/aero-hand-open.git
 cd aero-hand-open/ros2
 colcon build
 source install/setup.bash
@@ -189,7 +189,7 @@ Executables (from `setup.py`):
 
 ## 3) Common messages — aero_hand_open_msgs/msg
 
-Browse the `.msg` files here: [github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/TetherIA/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
+Browse the `.msg` files here: [github.com/chestnut-robotics/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg](https://github.com/chestnut-robotics/aero-hand-open/tree/main/ros2/src/aero_hand_open_msgs/msg)
 
 **JointControl.msg**
 
@@ -273,7 +273,7 @@ rclpy.spin(Echo())
 
 ## 4) RL policy deployment — aero_hand_open_rl
 
-See README: [github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/TetherIA/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
+See README: [github.com/chestnut-robotics/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md](https://github.com/chestnut-robotics/aero-hand-open/blob/main/ros2/src/aero_hand_open_rl/README.md)
 
 ### What it does
 
@@ -317,4 +317,4 @@ Check the README for exact dependencies (SDK/firmware versions, sim environment,
 
 
 With these packages in place, you have a full ROS 2 stack that spans **hardware control**, **TeleOp**,
-and **AI policy deployment** for the TetherIA Aero Hand Open.
+and **AI policy deployment** for the Aero Hand Open.

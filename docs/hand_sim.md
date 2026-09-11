@@ -1,10 +1,10 @@
 # Sim and RL
 
-The **TetherIA Aero Hand Open** features a physically accurate **tendon-driven actuation system** that emulates real cable mechanics, allowing control and observation directly in **tendon space**. This design provides a faithful bridge between simulation and real-world deployment.
+The **Aero Hand Open** features a physically accurate **tendon-driven actuation system** that emulates real cable mechanics, allowing control and observation directly in **tendon space**. This design provides a faithful bridge between simulation and real-world deployment.
 
 The hand can be simulated across multiple physics platforms. Currently, it supports the **[MuJoCo simulator](https://mujoco.org/)**, where it is fully integrated into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** for seamless visualization, training, and evaluation of tendon-space control policies. Support for additional simulation platforms is currently in progress.
 
-- **Hand Model:** [MuJoCo Menagerie – TetherIA Aero Hand Open](https://github.com/google-deepmind/mujoco_menagerie/tree/main/tetheria_aero_hand_open)  
+- **Hand Model:** [MuJoCo Menagerie – Aero Hand Open](https://github.com/google-deepmind/mujoco_menagerie/tree/main/tetheria_aero_hand_open)  
 - **Training Tools:** [MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground/tree/main/mujoco_playground/_src/manipulation/aero_hand)
 
 ---
@@ -22,7 +22,7 @@ python learning/train_jax_ppo.py --env_name AeroCubeRotateZAxis
 ```
 You can replace `AeroCubeRotateZAxis` with the name of your own environment. After training, a rollout video will be saved as `rollout0.mp4`.
 
-If you'd like to explore TetherIA Aero Hand Open within the MuJoCo simulator, follow these steps:
+If you'd like to explore Aero Hand Open within the MuJoCo simulator, follow these steps:
 
 1. Follow the [official MuJoCo installation guide](https://mujoco.readthedocs.io/en/latest/programming/#getting-started).
 2. The hand model is hosted under our fork of the MuJoCo Menagerie:
@@ -48,7 +48,7 @@ An overview of the hand is shown below:
 
 ---
 
-## 1. TetherIA Aero Hand Model
+## 1. Aero Hand Model
 
 ### 1.1 Modeling
 
@@ -92,7 +92,7 @@ All remaining control parameters are fine-tuned to ensure consistent dynamics be
 
 ## 2. Training a Tendon-Space Policy
 
-We introduce a **Z-axis rotation task** for the **TetherIA Aero Hand Open**, optimized using the following reward function:
+We introduce a **Z-axis rotation task** for the **Aero Hand Open**, optimized using the following reward function:
 
 reward = 1.0 × angular velocity - 1.0 × action rate + termination (-100.0)
 
@@ -123,7 +123,7 @@ While training results vary slightly due to stochasticity, runs consistently **c
 
 ## 3. Running a Pretrained Policy
 
-This example builds upon **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** as an educational platform. ~~We are actively working to merge **[our implementation](https://github.com/TetherIA/mujoco_playground_pr)** into the official repository.~~ This has been officially merged into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground/tree/main/mujoco_playground/_src/manipulation/aero_hand)** in [commit 1bd244f](https://github.com/google-deepmind/mujoco_playground/commit/1bd244fa9c51fa7074c7a449934f556d898f7a15).
+This example builds upon **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground)** as an educational platform. ~~We are actively working to merge **[our implementation](https://github.com/chestnut-robotics/mujoco_playground_pr)** into the official repository.~~ This has been officially merged into **[MuJoCo Playground](https://github.com/google-deepmind/mujoco_playground/tree/main/mujoco_playground/_src/manipulation/aero_hand)** in [commit 1bd244f](https://github.com/google-deepmind/mujoco_playground/commit/1bd244fa9c51fa7074c7a449934f556d898f7a15).
 
 To test a trained policy:
 ```bash
@@ -142,7 +142,7 @@ This will:
 |---------|---------|---------|
 | ![seed0](imgs/cube_rotation.gif) | ![seed1](imgs/cube_rotation1.gif) | ![seed14](imgs/cube_rotation14.gif) |
 
-**Sim-to-Real Deployment on the TetherIA Aero Hand Open**
+**Sim-to-Real Deployment on the Aero Hand Open**
 
 ![Z-Axis Rotation Demo](imgs/output.gif)
 
@@ -157,6 +157,6 @@ Dependency:
 
 <div align="center">
 
-Made with ❤️ by **TetherIA Robotics**
+Made with ❤️ by **Chestnut Robotics**
 
 </div>

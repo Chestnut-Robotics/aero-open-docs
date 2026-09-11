@@ -231,7 +231,7 @@ This project is licensed under **Apache License‑2.0**
 
 We welcome community contributions!
 
-If you would like to improve the [Firmware](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) or add new features:
+If you would like to improve the [Firmware](https://github.com/chestnut-robotics/aero-hand-open/tree/main/firmware) or add new features:
 
 1. Fork and create a feature branch.
 2. Add or modify opcodes and handlers as described in Section 9.
@@ -245,10 +245,10 @@ If you would like to improve the [Firmware](https://github.com/TetherIA/aero-han
 ## Support & Contact
 
 * Open a GitHub Issue on the project repository
-* Email: **[contact@tetheria.ai](mailto:contact@tetheria.ai)**
+* Email: **[contact@chestnut.bot](mailto:contact@chestnut.bot)**
 
 <div align="center">
 
-Made with ❤️ by **TetherIA Robotics**
+Made with ❤️ by **Chestnut Robotics**
 
 </div>

@@ -1,6 +1,6 @@
 # SDK
 
-After [assembling your hand](/docs/mechanical.md) and setting up the actuators (more on that in the [GUI section](#️-gui)), you can control your Aero hand using our Python SDK. SDK manages serial communication with the hardware using TetherIA’s custom [communication protocol](firmware.md).
+After [assembling your hand](/docs/mechanical.md) and setting up the actuators (more on that in the [GUI section](#️-gui)), you can control your Aero hand using our Python SDK. SDK manages serial communication with the hardware using Chestnut Robotics’ custom [communication protocol](firmware.md).
 
 ---
 
@@ -28,7 +28,7 @@ This will open the `serial` port for communicating with the hand.
 By default, **Linux** assigns the first connected device to `/dev/ttyACM0`, while **Windows** typically uses `COM1` or `COM2`.  
 However, this is **not guaranteed**, the exact port may vary depending on your system and connected devices.  
 Always verify the correct port before initializing the hand.  
-For detailed steps on identifying and configuring serial ports, refer to our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk).
+For detailed steps on identifying and configuring serial ports, refer to our [GitHub repository](https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk).
 :::
 
 ### Joint Representation
@@ -141,7 +141,7 @@ For example:
 - To move only the thumb_cmc_flex joint, we actuate the corresponding actuator. However, this also pulls the tendons that control the thumb_mcp and thumb_ip joints, causing them to move as well.  
 - Similar coupling exists for the thumb_cmc_abd joint as well, which affects all three actuators in the thumb.
 
-We handle these coupling effects through the joints-to-actuations mapping. Curious users can explore the implementation in the [`joints_to_actuations.py`](https://github.com/TetherIA/aero-hand-open/blob/main/sdk/src/aero_open_sdk/joints_to_actuations.py) file for details.
+We handle these coupling effects through the joints-to-actuations mapping. Curious users can explore the implementation in the [`joints_to_actuations.py`](https://github.com/chestnut-robotics/aero-hand-open/blob/main/sdk/src/aero_open_sdk/joints_to_actuations.py) file for details.
 
 Typically, you won’t need to worry about these coupling effects, as the `set_joint_positions()` method automatically applies this mapping internally to convert joint angles into actuator commands.
 
@@ -255,7 +255,7 @@ aero_hand.set_actuations(target_actuations)
 ### Actuation Torque Control
 You can directly send torque control command to the seven motors. The torque control only works for the hand closing direction. The control API is `hand.ctrl_torque(torque_list)`.
 
-See more examples in [torque control example](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples/torque_control.py) and [position torque switching](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples/position_torque_switching.py)
+See more examples in [torque control example](https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk/examples/torque_control.py) and [position torque switching](https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk/examples/position_torque_switching.py)
 
 :::note
 We recommend to use switching only when necessary as frequent switching may lead to unexpected behavior. If the hand is not responding as expected, please restart the program and try to do homing before switching modes.
@@ -308,11 +308,11 @@ This will return a list of 7 actuation speeds in rpm.
 
 ### Examples
 
-To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/TetherIA/aero-hand-open/tree/main/sdk/examples)
+To quickly get started with the SDK, check out the examples in our [GitHub repository](https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk/examples)
 
 
 <div align="center">
 
-Made with ❤️ by **TetherIA Robotics**
+Made with ❤️ by **Chestnut Robotics**
 
 </div>

@@ -23,7 +23,7 @@ This guide explains how to adjust the website behavior and configuration. It is 
 The repo has a few important files/folders:
 
 ```
-open-hand-doc/
+aero-open-docs/
 ├── docs/                     ← Documentation content (Markdown files)
 ├── docusaurus.config.js      ← Main website configuration (title, logo, navbar, footer)
 ├── sidebars.js               ← Defines the sidebar navigation
@@ -81,17 +81,17 @@ All global settings live in `docusaurus.config.js`.
 
 ```javascript
 const config = {
-  title: 'TetherIA Docs',
+  title: 'Aero Hand Open Docs',
   favicon: 'img/favicon.ico',
   url: 'https://docs.tetheria.ai',
   baseUrl: '/',
   themeConfig: {
     navbar: {
-      title: 'TetherIA',
+      title: 'Chestnut Robotics',
       logo: { src: 'img/logo.svg' },
       items: [
         { to: '/docs/intro', label: 'Docs', position: 'left' },
-        { href: 'https://github.com/TetherIA/open-hand-doc', label: 'GitHub', position: 'right' },
+        { href: 'https://github.com/chestnut-robotics/aero-open-docs', label: 'GitHub', position: 'right' },
       ],
     },
   },
@@ -102,7 +102,7 @@ const config = {
 
 | Change | Location |
 |--------|----------|
-| **Change the site title** | `title: 'TetherIA Docs'` |
+| **Change the site title** | `title: 'Aero Hand Open Docs'` |
 | **Change the navbar items** | `edit navbar.items[]` |
 | **Change the footer links** | `themeConfig.footer` section |
 

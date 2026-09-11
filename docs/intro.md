@@ -28,7 +28,7 @@ This approach achieves high dexterity with fewer actuators, resulting in a light
 - 6 V DC power input and USB communication
 - Fully open-source CAD and PCB design
 
-All mechanical and electrical design files are available in the [`hardware`](https://github.com/TetherIA/aero-hand-open/tree/main/hardware) folder.
+All mechanical and electrical design files are available in the [`hardware`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/hardware) folder.
 
 ---
 
@@ -40,7 +40,7 @@ The onboard controller runs custom firmware supporting:
 - Real-time command streaming via Python SDK
 - Built-in calibration and diagnostics utilities
 
-Firmware source code is hosted in the [`firmware`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) folder.
+Firmware source code is hosted in the [`firmware`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/firmware) folder.
 
 ---
 
@@ -51,9 +51,9 @@ Developers can interface with the hand through:
 - **ROS 2 packages** exposing communication, teleoperation, and and RL policy deployment, etc.
 - Example nodes for control, data collection, and policy playback
 
-Software API is maintained in the [`sdk`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) folder.
+Software API is maintained in the [`sdk`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk) folder.
 
-ROS2 packages is maintained in the [`ros2`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) folder.
+ROS2 packages is maintained in the [`ros2`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/ros2) folder.
 
 ---
 
@@ -70,11 +70,11 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 
 | Component | Repository | Description |
 |------------|-------------|-------------|
-| Monorepo | [`aero-hand-open`](https://github.com/TetherIA/aero-hand-open) | Consolidated repository for community contributions |
-| Hardware | [`hardware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/hardware) | CAD models, assembly, and PCB design|
-| Firmware | [`firmware folder`](https://github.com/TetherIA/aero-hand-open/tree/main/firmware) | Embedded control software |
-| SDK / GUI | [`sdk folder`](https://github.com/TetherIA/aero-hand-open/tree/main/sdk) | Python SDK and GUI |
-| ROS2 | [`ros2 folder`](https://github.com/TetherIA/aero-hand-open/tree/main/ros2) | ROS2 packages for URDF, TeleOp, RL policy deployment, etc. |
+| Monorepo | [`aero-hand-open`](https://github.com/chestnut-robotics/aero-hand-open) | Consolidated repository for community contributions |
+| Hardware | [`hardware folder`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/hardware) | CAD models, assembly, and PCB design|
+| Firmware | [`firmware folder`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/firmware) | Embedded control software |
+| SDK / GUI | [`sdk folder`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/sdk) | Python SDK and GUI |
+| ROS2 | [`ros2 folder`](https://github.com/chestnut-robotics/aero-hand-open/tree/main/ros2) | ROS2 packages for URDF, TeleOp, RL policy deployment, etc. |
 
 ---
 
@@ -97,10 +97,10 @@ Use simulation to train control policies, benchmark algorithms, and prototype ma
 ## License
 
 All components of Aero Hand Open are released under permissive open-source licenses.  
-Please refer to the [LICENSE FILE](https://github.com/TetherIA/aero-hand-open/blob/main/LICENSE.md) for license details.
+Please refer to the [LICENSE FILE](https://github.com/chestnut-robotics/aero-hand-open/blob/main/LICENSE.md) for license details.
 
 <div align="center">
 
-Made with ❤️ by **TetherIA Robotics**
+Made with ❤️ by **Chestnut Robotics**
 
 </div>
